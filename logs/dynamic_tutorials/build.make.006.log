@@ -1,0 +1,17 @@
+[ 33%] [34m[1mGenerating dynamic reconfigure files from cfg/Tutorials.cfg: /home/raphael/catkin_ws/devel/.private/dynamic_tutorials/include/dynamic_tutorials/TutorialsConfig.h /home/raphael/catkin_ws/devel/.private/dynamic_tutorials/lib/python2.7/dist-packages/dynamic_tutorials/cfg/TutorialsConfig.py[0m
+Traceback (most recent call last):
+  File "/home/raphael/catkin_ws/src/dynamic_tutorials/cfg/Tutorials.cfg", line 8, in <module>
+    gen.add("move_base_node/robot_radius", double_t, 0, "A double parameter", .4)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py", line 293, in add
+    self.group.add(name, paramtype, level, description, default, min, max, edit_method) 
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py", line 143, in add
+    check_name(name)
+  File "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py", line 76, in check_name
+    raise Exception("The name of field \'%s\' does not follow the ROS naming conventions, see http://wiki.ros.org/ROS/Patterns/Conventions"%name)
+Exception: The name of field 'move_base_node/robot_radius' does not follow the ROS naming conventions, see http://wiki.ros.org/ROS/Patterns/Conventions
+CMakeFiles/dynamic_tutorials_gencfg.dir/build.make:63: recipe for target '/home/raphael/catkin_ws/devel/.private/dynamic_tutorials/include/dynamic_tutorials/TutorialsConfig.h' failed
+make[2]: *** [/home/raphael/catkin_ws/devel/.private/dynamic_tutorials/include/dynamic_tutorials/TutorialsConfig.h] Error 1
+CMakeFiles/Makefile2:1064: recipe for target 'CMakeFiles/dynamic_tutorials_gencfg.dir/all' failed
+make[1]: *** [CMakeFiles/dynamic_tutorials_gencfg.dir/all] Error 2
+Makefile:138: recipe for target 'all' failed
+make: *** [all] Error 2

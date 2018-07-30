@@ -1,0 +1,8 @@
+prefix=/home/raphael/catkin_ws/devel/.private/otimizador
+
+Name: otimizador
+Description: Description of otimizador
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/raphael/catkin_ws/devel/.private/otimizador/lib 
+Requires: 

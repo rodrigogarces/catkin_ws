@@ -1,0 +1,41 @@
+[36m--[0m Using CATKIN_DEVEL_PREFIX: /home/raphael/catkin_ws/devel/.private/teb_local_planner
+[36m--[0m Using CMAKE_PREFIX_PATH: /home/raphael/catkin_ws/devel;/home/raphael/catkin_ws/devel/.private/catkin_tools_prebuild;/opt/ros/kinetic
+[36m--[0m This workspace overlays: /home/raphael/catkin_ws/devel;/home/raphael/catkin_ws/devel/.private/catkin_tools_prebuild;/opt/ros/kinetic
+[36m--[0m Using PYTHON_EXECUTABLE: /usr/bin/python
+[36m--[0m Using Debian Python package layout
+[36m--[0m Using empy: /usr/bin/empy
+[36m--[0m Using CATKIN_ENABLE_TESTING: ON
+[36m--[0m Call enable_testing()
+[36m--[0m Using CATKIN_TEST_RESULTS_DIR: /home/raphael/catkin_ws/build/teb_local_planner/test_results
+[36m--[0m Found gtest sources under '/usr/src/gtest': gtests will be built
+[36m--[0m Using Python nosetests: /usr/bin/nosetests-2.7
+[36m--[0m catkin 0.7.6
+[36m--[0m Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[36m--[0m System: Linux-4.13.0-36-generic
+[36m--[0m /opt/ros/kinetic/share/cmake_modules/cmake/../../../share/cmake_modules/cmake/Modules;/home/raphael/catkin_ws/src/teb_local_planner/cmake_modules
+[36m--[0m Boost version: 1.58.0
+[36m--[0m Found the following Boost libraries:
+[36m--[0m   system
+[36m--[0m   thread
+[36m--[0m   graph
+[36m--[0m   chrono
+[36m--[0m   date_time
+[36m--[0m   atomic
+[36m--[0m Found SuiteSparse
+[36m--[0m Searching for g2o ...
+[36m--[0m Found g2o headers in: /opt/ros/kinetic/include/g2o
+[36m--[0m Found libg2o: /opt/ros/kinetic/lib/libg2o_csparse_extension.so;/opt/ros/kinetic/lib/libg2o_core.so;/opt/ros/kinetic/lib/libg2o_stuff.so;/opt/ros/kinetic/lib/libg2o_types_slam2d.so;/opt/ros/kinetic/lib/libg2o_types_slam3d.so;/opt/ros/kinetic/lib/libg2o_solver_cholmod.so;/opt/ros/kinetic/lib/libg2o_solver_pcg.so;/opt/ros/kinetic/lib/libg2o_solver_csparse.so;/opt/ros/kinetic/lib/libg2o_incremental.so
+[36m--[0m teb_local_planner: 3 messages, 0 services
+[31m[1mCMake Error[0m at /opt/ros/kinetic/share/catkin/cmake/catkin_package.cmake:298 (message):
+  catkin_package() absolute include dir '/opt/ros/kinetic/include/g2o' does
+  not exist
+[36mCall Stack (most recent call first):[0m
+  /opt/ros/kinetic/share/catkin/cmake/catkin_package.cmake:102 (_catkin_package)
+  CMakeLists.txt:143 (catkin_package)
+
+
+[36m--[0m Configuring incomplete, errors occurred!
+See also "/home/raphael/catkin_ws/build/teb_local_planner/CMakeFiles/CMakeOutput.log".
+See also "/home/raphael/catkin_ws/build/teb_local_planner/CMakeFiles/CMakeError.log".
+Makefile:2382: recipe for target 'cmake_check_build_system' failed
+make: *** [cmake_check_build_system] Error 1

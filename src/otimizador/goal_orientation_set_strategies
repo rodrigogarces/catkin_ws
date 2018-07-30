@@ -1,0 +1,5 @@
+Estratégias para definir orientação do alvo:
+    1. Subescrever o topico de corrente pose em uma frequecia plausível e a cada callback setar a 
+	orientação do alvo, com a mesma orientação do robô;
+	
+

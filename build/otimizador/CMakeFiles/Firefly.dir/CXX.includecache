@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/raphael/catkin_ws/src/otimizador/src/Firefly.cpp
+Firefly.h
+/home/raphael/catkin_ws/src/otimizador/src/Firefly.h
+
+/home/raphael/catkin_ws/src/otimizador/src/Firefly.h
+

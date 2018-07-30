@@ -1,0 +1,5 @@
+[01m[K/home/raphael/catkin_ws/src/youbot_navigation/youbot_navigation_common/src/lowpass_filter.cpp:1:21:[m[K [01;31m[Kfatal error: [m[Kros/ros.h: Arquivo ou diretório não encontrado
+compilation terminated.
+make[2]: *** [CMakeFiles/lowpass_filter.dir/src/lowpass_filter.cpp.o] Error 1
+make[1]: *** [CMakeFiles/lowpass_filter.dir/all] Error 2
+make: *** [all] Error 2

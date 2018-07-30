@@ -1,0 +1,6 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~robot_radius" : \b [double] Robot Radius min: -std::numeric_limits<double>::infinity(), default: 0.4, max: std::numeric_limits<double>::infinity()
+

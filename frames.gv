@@ -1,0 +1,10 @@
+digraph G {
+"map" -> "odom"[label="Broadcaster: /slam_gmapping\nAverage rate: 20.202 Hz\nMost recent transform: 1508292573.505 ( -0.017 sec old)\nBuffer length: 4.950 sec\n"];
+"odom" -> "base_link"[label="Broadcaster: /vrep_ros_interface\nAverage rate: 14.987 Hz\nMost recent transform: 759052.562 ( 1507533520.925 sec old)\nBuffer length: 4.938 sec\n"];
+"base_link" -> "base_front_link"[label="Broadcaster: /vrep_ros_interface\nAverage rate: 14.987 Hz\nMost recent transform: 759052.562 ( 1507533520.925 sec old)\nBuffer length: 4.938 sec\n"];
+"base_front_link" -> "Hokuyo_URG_04LX_UG01_ROS_ref"[label="Broadcaster: /vrep_ros_interface\nAverage rate: 14.987 Hz\nMost recent transform: 759052.562 ( 1507533520.925 sec old)\nBuffer length: 4.938 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1508292573.488"[ shape=plaintext ] ;
+ }->"map";
+}

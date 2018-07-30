@@ -1,0 +1,4 @@
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:[m[K In function ‘[01m[Kdouble* GeneticAlgorithm(int, int, double*, double*, int, int, int)[m[K’:
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:1867:77:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%d[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 6 has type ‘[01m[Kdouble[m[K’ [-Wformat=]
+          P.indiv[P.melhor].fit, P.gerMelhor, P.numMuta, Aval, erro, med, dvp);
+[01;32m[K                                                                             ^[m[K

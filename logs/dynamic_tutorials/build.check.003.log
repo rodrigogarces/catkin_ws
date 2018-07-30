@@ -1,0 +1,37 @@
+[36m--[0m Using CATKIN_DEVEL_PREFIX: /home/raphael/catkin_ws/devel/.private/dynamic_tutorials
+[36m--[0m Using CMAKE_PREFIX_PATH: /home/raphael/catkin_ws/devel;/home/raphael/catkin_ws/devel/.private/catkin_tools_prebuild;/opt/ros/kinetic
+[36m--[0m This workspace overlays: /home/raphael/catkin_ws/devel;/home/raphael/catkin_ws/devel/.private/catkin_tools_prebuild;/opt/ros/kinetic
+[36m--[0m Using PYTHON_EXECUTABLE: /usr/bin/python
+[36m--[0m Using Debian Python package layout
+[36m--[0m Using empy: /usr/bin/empy
+[36m--[0m Using CATKIN_ENABLE_TESTING: ON
+[36m--[0m Call enable_testing()
+[36m--[0m Using CATKIN_TEST_RESULTS_DIR: /home/raphael/catkin_ws/build/dynamic_tutorials/test_results
+[36m--[0m Found gtest sources under '/usr/src/gtest': gtests will be built
+[36m--[0m Using Python nosetests: /usr/bin/nosetests-2.7
+[36m--[0m catkin 0.7.6
+[36m--[0m Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[33m[1mCMake Warning[0m at /home/raphael/catkin_ws/build/dynamic_tutorials/cmake/dynamic_tutorials-genmsg.cmake:3 (message):
+  Invoking generate_messages() without having added any message or service
+  file before.
+
+  You should either add add_message_files() and/or add_service_files() calls
+  or remove the invocation of generate_messages().
+[36mCall Stack (most recent call first):[0m
+  /opt/ros/kinetic/share/genmsg/cmake/genmsg-extras.cmake:307 (include)
+  CMakeLists.txt:20 (generate_messages)
+
+
+[36m--[0m dynamic_tutorials: 0 messages, 0 services
+[31m[1mCMake Error[0m at /opt/ros/kinetic/share/dynamic_reconfigure/cmake/dynamic_reconfigure-macros.cmake:3 (message):
+  generate_dynamic_reconfigure_options() must be called before
+  catkin_package() in project 'dynamic_tutorials'
+[36mCall Stack (most recent call first):[0m
+  CMakeLists.txt:31 (generate_dynamic_reconfigure_options)
+
+
+[36m--[0m Configuring incomplete, errors occurred!
+See also "/home/raphael/catkin_ws/build/dynamic_tutorials/CMakeFiles/CMakeOutput.log".
+See also "/home/raphael/catkin_ws/build/dynamic_tutorials/CMakeFiles/CMakeError.log".
+Makefile:642: recipe for target 'cmake_check_build_system' failed
+make: *** [cmake_check_build_system] Error 1

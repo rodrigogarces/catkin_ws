@@ -1,0 +1,99 @@
+In file included from [01m[K/opt/ros/kinetic/include/ros/ros.h:40:0[m[K,
+                 from [01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:3[m[K:
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:[m[K In function ‘[01m[Kvoid mapCallback(const ConstPtr&)[m[K’:
+[01m[K/opt/ros/kinetic/include/ros/console.h:346:176:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%i[m[K’ expects argument of type ‘[01m[Kint[m[K’, but argument 8 has type ‘[01m[Kdouble[m[K’ [-Wformat=]
+     ::ros::console::print(filter, __rosconsole_define_location__loc.logger_, __rosconsole_define_location__loc.level_, __FILE__, __LINE__, __ROSCONSOLE_FUNCTION__, __VA_ARGS__)
+[01;32m[K                                                                                                                                                                                ^[m[K
+[01m[K/opt/ros/kinetic/include/ros/console.h:349:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION_WITH_FILTER[m[K’
+     ROSCONSOLE_PRINT_AT_LOCATION_WITH_FILTER(0, __VA_ARGS__)
+[01;32m[K     ^[m[K
+[01m[K/opt/ros/kinetic/include/ros/console.h:379:7:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION[m[K’
+       ROSCONSOLE_PRINT_AT_LOCATION(__VA_ARGS__); \
+[01;32m[K       ^[m[K
+[01m[K/opt/ros/kinetic/include/ros/console.h:561:35:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_COND[m[K’
+ #define ROS_LOG(level, name, ...) ROS_LOG_COND(true, level, name, __VA_ARGS__)
+[01;32m[K                                   ^[m[K
+[01m[K/opt/ros/kinetic/include/rosconsole/macros_generated.h:110:23:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG[m[K’
+ #define ROS_INFO(...) ROS_LOG(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, __VA_ARGS__)
+[01;32m[K                       ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:917:5:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO[m[K’
+     ROS_INFO("max: %i", max);
+[01;32m[K     ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:[m[K In function ‘[01m[Kdouble* SolveG(int, int, double*, double*, int, int, int)[m[K’:
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:1742:68:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%f[m[K’ expects argument of type ‘[01m[Kdouble[m[K’, but argument 2 has type ‘[01m[Kclock_t {aka long int}[m[K’ [-Wformat=]
+     printf("\n\t em tempo = %.4f, ", (end - start) / CLOCKS_PER_SEC);
+[01;32m[K                                                                    ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:[m[K In function ‘[01m[Kdouble _FuncaoObjetivo(double*, int)[m[K’:
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:1990:30:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Ki[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+     double pixel[2] = { i, j };
+[01;32m[K                              ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:1990:30:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kj[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2000:42:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Krobot_position[1][m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+         double rp[2] = { robot_position[1], robot_position[0] };
+[01;32m[K                                          ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2000:61:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Krobot_position[0][m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+         double rp[2] = { robot_position[1], robot_position[0] };
+[01;32m[K                                                             ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2001:44:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kdestino_corrente[1][m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+         double dp[2] = { destino_corrente[1], destino_corrente[0] };
+[01;32m[K                                            ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2001:65:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kdestino_corrente[0][m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+         double dp[2] = { destino_corrente[1], destino_corrente[0] };
+[01;32m[K                                                                 ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2006:44:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K*(*(fronteira + ((sizetype)(((long unsigned int)f) * 8ul))))[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+             double pf[2] = { fronteira[f][0], fronteira[f][1] };
+[01;32m[K                                            ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2006:61:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K*((*(fronteira + ((sizetype)(((long unsigned int)f) * 8ul)))) + 4u)[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+             double pf[2] = { fronteira[f][0], fronteira[f][1] };
+[01;32m[K                                                             ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2014:48:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K*(*(regiao_perigo + ((sizetype)(((long unsigned int)r) * 8ul))))[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+             double pr[2] = { regiao_perigo[r][0], regiao_perigo[r][1] };
+[01;32m[K                                                ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2014:69:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K*((*(regiao_perigo + ((sizetype)(((long unsigned int)r) * 8ul)))) + 4u)[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+             double pr[2] = { regiao_perigo[r][0], regiao_perigo[r][1] };
+[01;32m[K                                                                     ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2023:44:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K*(*(visitados + ((sizetype)(((long unsigned int)v) * 8ul))))[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+             double pv[2] = { visitados[v][0], visitados[v][1] };
+[01;32m[K                                            ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2023:61:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K*((*(visitados + ((sizetype)(((long unsigned int)v) * 8ul)))) + 4u)[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+             double pv[2] = { visitados[v][0], visitados[v][1] };
+[01;32m[K                                                             ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:[m[K In function ‘[01m[Kvoid GeraMapaObjetivo(int, int)[m[K’:
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2097:32:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Ki[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+       double pixel[2] = { i, j };
+[01;32m[K                                ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2097:32:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kj[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2102:42:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Krobot_position[1][m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+         double rp[2] = { robot_position[1], robot_position[0] };
+[01;32m[K                                          ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2102:61:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Krobot_position[0][m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+         double rp[2] = { robot_position[1], robot_position[0] };
+[01;32m[K                                                             ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2103:44:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kdestino_corrente[1][m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+         double dp[2] = { destino_corrente[1], destino_corrente[0] };
+[01;32m[K                                            ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2103:65:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[Kdestino_corrente[0][m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+         double dp[2] = { destino_corrente[1], destino_corrente[0] };
+[01;32m[K                                                                 ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2109:44:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K*(*(fronteira + ((sizetype)(((long unsigned int)f) * 8ul))))[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+             double pf[2] = { fronteira[f][0], fronteira[f][1] };
+[01;32m[K                                            ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2109:61:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K*((*(fronteira + ((sizetype)(((long unsigned int)f) * 8ul)))) + 4u)[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+             double pf[2] = { fronteira[f][0], fronteira[f][1] };
+[01;32m[K                                                             ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2117:46:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K*(*(regiao_perigo + ((sizetype)(((long unsigned int)r) * 8ul))))[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+           double pr[2] = { regiao_perigo[r][0], regiao_perigo[r][1] };
+[01;32m[K                                              ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2117:67:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K*((*(regiao_perigo + ((sizetype)(((long unsigned int)r) * 8ul)))) + 4u)[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+           double pr[2] = { regiao_perigo[r][0], regiao_perigo[r][1] };
+[01;32m[K                                                                   ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2125:42:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K*(*(visitados + ((sizetype)(((long unsigned int)v) * 8ul))))[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+           double pv[2] = { visitados[v][0], visitados[v][1] };
+[01;32m[K                                          ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:2125:59:[m[K [01;35m[Kwarning: [m[Knarrowing conversion of ‘[01m[K*((*(visitados + ((sizetype)(((long unsigned int)v) * 8ul)))) + 4u)[m[K’ from ‘[01m[Kint[m[K’ to ‘[01m[Kdouble[m[K’ inside { } [-Wnarrowing]
+           double pv[2] = { visitados[v][0], visitados[v][1] };
+[01;32m[K                                                           ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:[m[K In function ‘[01m[Kvoid mapCallback(const ConstPtr&)[m[K’:
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:724:36:[m[K [01;35m[Kwarning: [m[Kignoring return value of ‘[01m[Kint system(const char*)[m[K’, declared with attribute warn_unused_result [-Wunused-result]
+         system("rosnode kill SLAM");
+[01;32m[K                                    ^[m[K

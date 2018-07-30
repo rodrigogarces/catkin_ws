@@ -1,0 +1,15 @@
+{
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "files.associations": {
+        "cctype": "cpp",
+        "cmath": "cpp",
+        "cstdio": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "array": "cpp",
+        "slist": "cpp",
+        "initializer_list": "cpp",
+        "*.ipp": "cpp",
+        "system_error": "cpp"
+    }
+}

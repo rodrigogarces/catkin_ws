@@ -1,0 +1,18 @@
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[ 22%] Built target Firefly
+[ 22%] Built target std_msgs_generate_messages_eus
+[ 22%] Built target std_msgs_generate_messages_lisp
+[ 22%] Built target otimizador_generate_messages_cpp
+[ 44%] Built target Node
+[ 44%] Built target otimizador_generate_messages_py
+[ 44%] Built target otimizador_generate_messages_nodejs
+[ 44%] Built target otimizador_generate_messages_lisp
+[ 55%] Built target otimizador_generate_messages_eus
+[ 77%] Built target AStar
+[ 77%] Built target otimizador_generate_messages
+[35m[1mScanning dependencies of target otimizador[0m
+[ 88%] [32mBuilding CXX object CMakeFiles/otimizador.dir/src/otimizador.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/raphael/catkin_ws/devel/.private/otimizador/lib/otimizador/otimizador[0m
+[100%] Built target otimizador

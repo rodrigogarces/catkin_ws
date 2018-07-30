@@ -1,0 +1,7 @@
+\subsubsection usage Usage
+\verbatim
+<node name="dynamic_params" pkg="dynamic_params" type="dynamic_params">
+  <param name="robot_radius" type="double" value="0.4" />
+</node>
+\endverbatim
+
