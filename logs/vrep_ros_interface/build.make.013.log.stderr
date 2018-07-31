@@ -1,7 +1,0 @@
-In file included from [01m[K/home/raphael/catkin_ws/src/vrep_ros_interface/include/vrep_ros_interface.h:108:0[m[K,
-                 from [01m[K/home/raphael/catkin_ws/src/vrep_ros_interface/src/vrep_ros_interface.cpp:1[m[K:
-[01m[K/home/raphael/catkin_ws/build/vrep_ros_interface/generated/ros_msg_io.h:103:55:[m[K [01;31m[Kfatal error: [m[Ksmach_msgs/SmachContainerInitialStatusCmd.h: Arquivo ou diretório não encontrado
-compilation terminated.
-make[2]: *** [CMakeFiles/v_repExtRosInterface.dir/src/vrep_ros_interface.cpp.o] Error 1
-make[1]: *** [CMakeFiles/v_repExtRosInterface.dir/all] Error 2
-make: *** [all] Error 2

@@ -5,6 +5,7 @@ CMakeFiles/otimizador.dir/src/otimizador.cpp.o
  /home/raphael/catkin_ws/src/otimizador/src/AStar.h
  /home/raphael/catkin_ws/src/otimizador/src/Firefly.h
  /home/raphael/catkin_ws/src/otimizador/src/Node.h
+ /home/raphael/catkin_ws/src/otimizador/src/OptimizationMethods.h
  /home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp
  /opt/ros/kinetic/include/class_loader/class_loader.h
  /opt/ros/kinetic/include/class_loader/class_loader_core.h

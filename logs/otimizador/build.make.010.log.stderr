@@ -1,0 +1,19 @@
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:[m[K In function ‘[01m[Kvoid inicilizaVariaeis()[m[K’:
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:367:10:[m[K [01;31m[Kerror: [m[Kmissing template arguments before ‘[01m[K->[m[K’ token
+   w = map->info.width;  // Largura do mapa
+[01;32m[K          ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:368:10:[m[K [01;31m[Kerror: [m[Kmissing template arguments before ‘[01m[K->[m[K’ token
+   h = map->info.height; // Altura do mapa
+[01;32m[K          ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:370:19:[m[K [01;31m[Kerror: [m[Kmissing template arguments before ‘[01m[K->[m[K’ token
+   pixel_size = map->info.resolution;
+[01;32m[K                   ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:372:17:[m[K [01;31m[Kerror: [m[Kmissing template arguments before ‘[01m[K->[m[K’ token
+   origin_x = map->info.origin.position.x;
+[01;32m[K                 ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:373:17:[m[K [01;31m[Kerror: [m[Kmissing template arguments before ‘[01m[K->[m[K’ token
+   origin_y = map->info.origin.position.y;
+[01;32m[K                 ^[m[K
+make[2]: *** [CMakeFiles/otimizador.dir/src/otimizador.cpp.o] Error 1
+make[1]: *** [CMakeFiles/otimizador.dir/all] Error 2
+make: *** [all] Error 2

@@ -20,6 +20,8 @@ string
 vector
 -
 
+/home/raphael/catkin_ws/src/otimizador/src/OptimizationMethods.h
+
 /home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp
 cstdio
 -
@@ -55,16 +57,12 @@ cmath
 -
 time.h
 -
-dynamic_reconfigure/DoubleParameter.h
--
-dynamic_reconfigure/Reconfigure.h
--
-dynamic_reconfigure/Config.h
--
 Firefly.h
 /home/raphael/catkin_ws/src/otimizador/src/Firefly.h
 AStar.h
 /home/raphael/catkin_ws/src/otimizador/src/AStar.h
+OptimizationMethods.h
+/home/raphael/catkin_ws/src/otimizador/src/OptimizationMethods.h
 condefs.h
 -
 

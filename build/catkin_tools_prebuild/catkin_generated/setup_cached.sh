@@ -7,6 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH="/opt/ros/kinetic/lib"
-export PKG_CONFIG_PATH="/opt/ros/kinetic/lib/pkgconfig"
+export CMAKE_PREFIX_PATH="/home/raphael/catkin_ws/devel/.private/catkin_tools_prebuild:$CMAKE_PREFIX_PATH"
 export PWD="/home/raphael/catkin_ws/build/catkin_tools_prebuild"
+export ROS_PACKAGE_PATH="/home/raphael/catkin_ws/build/catkin_tools_prebuild:$ROS_PACKAGE_PATH"

@@ -17,12 +17,10 @@
 #include <cmath>
 #include <time.h>
 
-#include <dynamic_reconfigure/DoubleParameter.h>
-#include <dynamic_reconfigure/Reconfigure.h>
-#include <dynamic_reconfigure/Config.h>
 
 #include "Firefly.h"
 #include "AStar.h"
+#include "OptimizationMethods.h"
 
 
 //########################################### DEFINES ############################################
@@ -34,17 +32,8 @@
 //#define GENETICO
 //#define FIREFLY
 //#define FIREFLY2
-#define ENUMERATIVO
-
-//#define FUNCAO1
-//#define FUNCAO2
-//#define FUNCAO3
-//#define FUNCAO4
-
-#define FUNCAOPP
-
-//#define AMB1
-#define AMB2
+//#define ENUMERATIVO
+#define SIMPLEX
 
 //#define GERAFUNCAO
 
@@ -59,6 +48,16 @@
 #define SIMPLEND
 #define SIMPLEXON
 #define NOSIMPLEN
+
+//#define FUNCAO1
+//#define FUNCAO2
+//#define FUNCAO3
+//#define FUNCAO4
+
+#define FUNCAOPP
+
+//#define AMB1
+#define AMB2
 
 #define NOLINHA
 #define XLS
@@ -284,9 +283,7 @@ void SortPop();
 void ReplacePop();
 double *FireflyAlgorithm(); // Implementa o Algoritmo de Vagalumes
 double *GeneticAlgorithm(int numFireflies, int dim, double *dmin, double *dmax, int seed, int maxEpocas, int step); // Implementa o Algoritmo Genético
-
-void planPath();
-
+double *SimplexAlgorithm();
 void heapify(int n, int i);
 void heapSort();
 /***************************************************************/
@@ -330,142 +327,6 @@ int main(int argc, char **argv)
 }
 
 /* #################### Definicão das funções ##################### */
-
-void planPath()
-{
-  if (dilatedMap != NULL)
-  {
-    tf::TransformListener listener;
-    tf::StampedTransform transform;
-    AStar *pfinder = new AStar(w, h, dilatedMap);
-
-    // - Pega posição do robô no OG - (TODO: Entender isso!)
-    try
-    {
-      listener.waitForTransform("/odom", "/base_link", ros::Time(0), ros::Duration(3.0));
-      listener.lookupTransform("/odom", "/base_link",
-                               ros::Time(0), transform);
-    }
-    catch (tf::TransformException &ex)
-    {
-      ROS_ERROR("%s", ex.what());
-      ros::Duration(1.0).sleep();
-    }
-
-    pose_x = transform.getOrigin().getX();
-    pose_y = transform.getOrigin().getY();
-
-    int grid_x = ((pose_x - origin_x) / pixel_size); // posição x no Ocuppancy Grid
-    int grid_y = ((pose_y - origin_y) / pixel_size); // posição y no Ocuppancy Grid
-
-    robot_position[0] = grid_x;
-    robot_position[1] = grid_y;
-
-    visitados[vi] = new int[2]{robot_position[1], robot_position[0]};
-    vi++; // Adiciona um ponto a lista de visitados
-
-    vector<vector<int>> path = pfinder->FindPath(robot_position, destino_corrente); // Executa o A*
-
-    // -- Pós-processamento do caminho gerado para que seja enviado como uma mensagem via ROS --
-    nav_msgs::Path posepath;
-    posepath.poses.resize(path.size());
-    int i = 0;
-
-    std::reverse(path.begin(), path.end()); // O path é gerado de trás para frente(destino -> origem). Por isso é invertido.
-
-    if (path.size() < 1)
-    {
-      has_goal = false;
-    }
-    else
-    {
-      double ant[2]; // gambiarra
-      ant[0] = path[0][0] * pixel_size + origin_x;
-      ant[1] = path[0][1] * pixel_size + origin_y;
-
-      double ant2[2]; // gambiarra
-      ant2[0] = ant[0];
-      ant2[1] = ant[1];
-
-      double dif[2];
-      _path.clear();
-
-      int ini; // = 2;
-
-      if (path.size() > 4)
-        ini = 2;
-      else
-        ini = 0;
-
-      _path.push_back(new double[2]{path[ini][0] * pixel_size + origin_x, path[ini][1] * pixel_size + origin_y});
-
-      std_msgs::String msg; // Mensagem que conterá o path
-      std::stringstream ss;
-
-      float floatoutarray[3];
-      char *string;
-      double pose[2];
-
-      int k = 0;
-
-      nav_msgs::GridCells rdanger;
-      std::string frameid = "/map";
-      rdanger.header.frame_id = frameid.c_str();
-      //rdanger.header.stamp = ros::Time::now();
-      rdanger.cell_width = pixel_size;
-      rdanger.cell_height = pixel_size;
-      rdanger.cells.clear();
-
-      //cout << "processa caminho" << endl;
-      for (i = ini + 1; i < path.size(); i++)
-      {
-        pose[0] = path[i][0] * pixel_size + origin_x;
-        pose[1] = path[i][1] * pixel_size + origin_y;
-
-        geometry_msgs::Point c;
-
-        c.x = pose[0];
-        c.y = pose[1];
-        c.z = 0;
-
-        rdanger.cells.push_back(c);
-
-        dif[0] = ant[0] - (path[i][0] * pixel_size + origin_x);
-        dif[1] = ant[1] - (path[i][1] * pixel_size + origin_y);
-
-        ant2[0] = ant2[0] + dif[0];
-        ant2[1] = ant2[1] - dif[1];
-
-        _path.push_back(new double[2]{pose[0], ant2[1]});
-
-        if (abs(pose[0] - robot_position[0]) <= 2 && abs(pose[1] - robot_position[1]) <= 2)
-          k = _path.size() - 1;
-
-        ant[0] = path[i][0] * pixel_size + origin_x;
-        ant[1] = path[i][1] * pixel_size + origin_y;
-      }
-
-      gc_path_pub.publish(rdanger);
-
-      for (; k < _path.size(); k++)
-      {
-        floatoutarray[0] = _path[k][0];
-        floatoutarray[1] = _path[k][1];
-        floatoutarray[2] = 0.0;
-        string = (char *)floatoutarray;
-
-        ss.write(string, 3 * sizeof(float));
-      }
-
-      //cout << "Publica caminho" << endl;
-
-      msg.data = ss.str();
-      path_pub.publish(msg); // Mensagem (com o path) é publicada!
-    }
-  }
-}
-
-
 void currPoseCallback(const geometry_msgs::PoseStamped::ConstPtr &curr_pose)
 {
   if (has_goal)
@@ -504,9 +365,8 @@ void costmapCallback(const nav_msgs::OccupancyGrid::ConstPtr &cmap)
       costmap[i][j] = cmap->data[i * w + j];
 }
 
-void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr &map)
-{
-  // TODO: carregar variaveis locais necessárias
+void inicilizaVariaeis(const nav_msgs::OccupancyGrid::ConstPtr &map){
+    // TODO: carregar variaveis locais necessárias
   w = map->info.width;  // Largura do mapa
   h = map->info.height; // Altura do mapa
 
@@ -523,15 +383,13 @@ void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr &map)
   // - Inicialização das matrizes de estado -
   // => Realocação todas as vezes é necessária ?????
 
-  if (first_time)
-  {
+  if (first_time) {
     _map = (int **)malloc(h * sizeof(int *));
     _mapobj = (float **)malloc(h * sizeof(float *));
     _mapa = (float **)malloc(h * sizeof(float *));
     dilatedMap = (int **)malloc(h * sizeof(int *));
 
-    for (int i = 0; i < h; i++)
-    {
+    for (int i = 0; i < h; i++) {
       _map[i] = (int *)malloc(w * sizeof(int));
       _mapobj[i] = (float *)malloc(w * sizeof(float));
       _mapa[i] = (float *)malloc(w * sizeof(float));
@@ -549,30 +407,23 @@ void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr &map)
          << endl;
   }
 
-  /*if(initVst)
-    {
-        visitados = new int*[w*h]; vi = 0;
-        initVst = false;
-    }*/
-  //has_map = true;
-
-  fi = 0;
-  ri = 0;
-  di = 0;
-
-  //unsigned char * charmap = gcostmap->getCharMap();
-  for (int i = 0; i < h; i++)
-  {
-    for (int j = 0; j < w; j++)
-    {
+  for (int i = 0; i < h; i++) {
+    for (int j = 0; j < w; j++) {
       int pixel = map->data[i * w + j];
-      //if(costmap != NULL && pixel > -1 && costmap[i][j] > pixel && costmap[i][j] > 0)
-      //    pixel = costmap[i][j];
 
       _map[i][j] = pixel;
       dilatedMap[i][j] = pixel;
     }
   }
+
+  fi = 0;
+  ri = 0;
+  di = 0;
+}
+
+void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr &map)
+{
+  inicilizaVariaeis(map);
 
   nav_msgs::GridCells rdanger;
   std::string frameid = "/map";
@@ -592,8 +443,6 @@ void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr &map)
     {
       pixel = _map[i][j];
       aux = 4;
-      //aux = 0.8 / 2 * pixel_size;
-      //int mei = i, mej = j;
 
       max = 0;
       double dis;
@@ -637,11 +486,6 @@ void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr &map)
 
       if (_map[i][j] < 0)
         dilatedMap[i][j] = _map[i][j];
-
-      //if(pixel > 0 &&  _map[i][j] == 0)
-      //    dilatedMap[i][j] = -2;
-      //else
-      //
     }
   }
 
@@ -692,13 +536,13 @@ void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr &map)
   cout << "numero de desconhecidos: " << di << endl;
 
   int NoDesc;
-#ifdef AMB1
-  NoDesc = 27270;
-#endif
+  #ifdef AMB1
+    NoDesc = 27270;
+  #endif
 
-#ifdef AMB2
-  NoDesc = 27890;
-#endif
+  #ifdef AMB2
+    NoDesc = 27890;
+  #endif
 
   if (di <= NoDesc) // amb 1: 27250 / 27270 -- amb 2: 27890
   {
@@ -789,55 +633,55 @@ void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr &map)
   visitados[vi] = new int[2]{robot_position[1], robot_position[0]};
   vi++; // Adiciona um ponto a lista de visitados
 
-//cout << " marco 4"  << endl;
-//#define GERAFUNCAO
-#ifdef GERAFUNCAO
-  FILE *fo = fopen("fobj.txt", "w");
-  GeraMapaObjetivo(w, h);
+  //cout << " marco 4"  << endl;
+  //#define GERAFUNCAO
+  #ifdef GERAFUNCAO
+    FILE *fo = fopen("fobj.txt", "w");
+    GeraMapaObjetivo(w, h);
 
-  fprintf(fo, "[");
-  for (int i = 0; i < h; i++)
-  {
-    for (int j = 0; j < w; j++)
+    fprintf(fo, "[");
+    for (int i = 0; i < h; i++)
     {
-      fprintf(fo, "\t %.4f", _mapobj[i][j]);
-    }
+      for (int j = 0; j < w; j++)
+      {
+        fprintf(fo, "\t %.4f", _mapobj[i][j]);
+      }
 
-    if (i < h - 1)
+      if (i < h - 1)
+      {
+        fprintf(fo, ";\n");
+      }
+    }
+    fprintf(fo, "]");
+    fclose(fo);
+  #endif
+
+  //#define SALVAMAPA
+  #ifdef SALVAMAPA
+    cout << "salva mapa" << endl;
+    FILE *fo = fopen("_map_.txt", "w");
+
+    fprintf(fo, "[");
+    for (int i = 0; i < h; i++)
     {
-      fprintf(fo, ";\n");
+      for (int j = 0; j < w; j++)
+      {
+        if (_map[i][j] > 0)
+          fprintf(fo, " %d", 1);
+        else
+          fprintf(fo, " %d", 0);
+
+        //fprintf(fo, "\t %.4f", _mapobj[i][j]);
+      }
+
+      if (i < h - 1)
+      {
+        fprintf(fo, ";\n");
+      }
     }
-  }
-  fprintf(fo, "]");
-  fclose(fo);
-#endif
-
-//#define SALVAMAPA
-#ifdef SALVAMAPA
-  cout << "salva mapa" << endl;
-  FILE *fo = fopen("_map_.txt", "w");
-
-  fprintf(fo, "[");
-  for (int i = 0; i < h; i++)
-  {
-    for (int j = 0; j < w; j++)
-    {
-      if (_map[i][j] > 0)
-        fprintf(fo, " %d", 1);
-      else
-        fprintf(fo, " %d", 0);
-
-      //fprintf(fo, "\t %.4f", _mapobj[i][j]);
-    }
-
-    if (i < h - 1)
-    {
-      fprintf(fo, ";\n");
-    }
-  }
-  fprintf(fo, "]");
-  fclose(fo);
-#endif
+    fprintf(fo, "]");
+    fclose(fo);
+  #endif
 
   int destino[2];
   double dis = 0.0;
@@ -853,192 +697,211 @@ void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr &map)
   else
     has_goal = true;
 
+  cout<< "1>";
   first_time = false;
   if (dilatedMap[destino_corrente[1]][destino_corrente[0]] != 0)
     has_goal = false;
 
   // - Gera um alvo -
   //has_goal = false;
+  cout<< "1>";
   if (!has_goal)
   {
     double *s;
 
-#ifdef ENUMERATIVO
-    /*
-    GridMap gmap({"elevation"});
-    gmap.setFrameId("map");
-    gmap.setGeometry(Length(h*pixel_size, w*pixel_size), pixel_size);
-    ROS_INFO("Created map with size %f x %f m (%i x %i cells).",
-    gmap.getLength().x(), gmap.getLength().y(),
-    gmap.getSize()(0), gmap.getSize()(1));
-    */
+  #ifdef ENUMERATIVO
+      /*
+      GridMap gmap({"elevation"});
+      gmap.setFrameId("map");
+      gmap.setGeometry(Length(h*pixel_size, w*pixel_size), pixel_size);
+      ROS_INFO("Created map with size %f x %f m (%i x %i cells).",
+      gmap.getLength().x(), gmap.getLength().y(),
+      gmap.getSize()(0), gmap.getSize()(1));
+      */
 
-    //rOS_INFO("w*h: %i", w*h);
+      //rOS_INFO("w*h: %i", w*h);
 
-    clock_t start, end;
-    double cpu_time_used;
+      clock_t start, end;
+      double cpu_time_used;
 
-    //struct timeval t1, t2;
-    //double elapsedTime;
+      //struct timeval t1, t2;
+      //double elapsedTime;
 
-    // start timer
-    // gettimeofday(&t1, NULL);
-    start = clock();
-    GeraMapaObjetivo(w, h);
-    end = clock();
+      // start timer
+      // gettimeofday(&t1, NULL);
+      start = clock();
+      GeraMapaObjetivo(w, h);
+      end = clock();
 
-    //gettimeofday(&t2, NULL);
-    //elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0;      // sec to ms
-    cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+      //gettimeofday(&t2, NULL);
+      //elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0;      // sec to ms
+      cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
 
-    avg_time += cpu_time_used;
-    qtdeCA++;
+      avg_time += cpu_time_used;
+      qtdeCA++;
 
-    FILE *ftime = fopen("time.txt", "a");
+      FILE *ftime = fopen("time.txt", "a");
 
-    fprintf(ftime, "time(ms): %lf;\n ", cpu_time_used);
-    fclose(ftime);
+      fprintf(ftime, "time(ms): %lf;\n ", cpu_time_used);
+      fclose(ftime);
 
-    /*
-    int l=0,c=0;
-    float max = 0;
-    for (GridMapIterator it(gmap); !it.isPastEnd(); ++it) {
-      //Position position;
-      //gmap.getPosition(*it, position);
+      /*
+      int l=0,c=0;
+      float max = 0;
+      for (GridMapIterator it(gmap); !it.isPastEnd(); ++it) {
+        //Position position;
+        //gmap.getPosition(*it, position);
 
-      if(_mapobj[l][c] == 100000000) 
-        gmap.at("elevation", *it) = 0;
-      else
-      { 
-        gmap.at("elevation", *it) = _mapobj[l][c]/100;
-        if(_mapobj[l][c] > max)
-          max = _mapobj[l][c];
+        if(_mapobj[l][c] == 100000000) 
+          gmap.at("elevation", *it) = 0;
+        else
+        { 
+          gmap.at("elevation", *it) = _mapobj[l][c]/100;
+          if(_mapobj[l][c] > max)
+            max = _mapobj[l][c];
+        }
+        c++;
+
+        if(c==w)
+        {
+          l++;
+          c=0;
+        }
       }
-      c++;
 
-      if(c==w)
+      ROS_INFO("max: %i", max);
+
+      ros::Time t = ros::Time::now();
+      gmap.setTimestamp(t.toNSec());
+      grid_map_msgs::GridMap message;
+      GridMapRosConverter::toMessage(gmap, message);
+      gb_publisher.publish(message);
+      */
+  #endif
+
+  #ifdef FIREFLY
+      cout << "Chama Firefly" << endl;
+      clock_t start, end;
+      double cpu_time_used;
+
+      start = clock();
+      s = FireflyAlgorithm();
+      end = clock();
+
+      FILE *faval = fopen("faval.txt", "a");
+      fprintf(faval, "%d\n", Aval);
+      fclose(faval);
+
+      cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+
+      avg_aval += Aval;
+      Aval = 0;
+      avg_time += cpu_time_used;
+      qtdeCA++;
+
+      //FILE *ftime = fopen("time.txt", "a");
+
+      //fprintf(ftime, "%lf\n", cpu_time_used);
+      //fclose(ftime);
+
+      if (bpos[0] != s[0] / pixel_size && bpos[1] != s[1] / pixel_size)
       {
-         l++;
-         c=0;
+        bpos[0] = s[0] / pixel_size;
+        bpos[1] = s[1] / pixel_size;
       }
-    }
 
-    ROS_INFO("max: %i", max);
+      destino[0] = (int)bpos[1];
+      destino[1] = (int)bpos[0];
 
-    ros::Time t = ros::Time::now();
-    gmap.setTimestamp(t.toNSec());
-    grid_map_msgs::GridMap message;
-    GridMapRosConverter::toMessage(gmap, message);
-    gb_publisher.publish(message);
-    */
-#endif
+      destino_corrente[0] = destino[0];
+      destino_corrente[1] = destino[1];
+  #endif
 
-#ifdef FIREFLY
-    cout << "Chama Firefly" << endl;
-    clock_t start, end;
-    double cpu_time_used;
+  #ifdef GENETICO
+      clock_t start, end;
+      double cpu_time_used;
 
-    start = clock();
-    s = FireflyAlgorithm();
-    end = clock();
+      start = clock();
+      s = GeneticAlgorithm(40, 2, dmin, dmax, 0, 100, 0);
+      end = clock();
 
-    FILE *faval = fopen("faval.txt", "a");
-    fprintf(faval, "%d\n", Aval);
-    fclose(faval);
+      cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
 
-    cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+      avg_time += cpu_time_used;
+      qtdeCA++;
 
-    avg_aval += Aval;
-    Aval = 0;
-    avg_time += cpu_time_used;
-    qtdeCA++;
+      //FILE *ftime = fopen("time.txt", "a");
 
-    //FILE *ftime = fopen("time.txt", "a");
+      //fprintf(ftime, "%lf\n", cpu_time_used);
+      //fclose(ftime);
 
-    //fprintf(ftime, "%lf\n", cpu_time_used);
-    //fclose(ftime);
+      if (bpos[0] != s[0] / pixel_size && bpos[1] != s[1] / pixel_size)
+      {
+        bpos[0] = s[0] / pixel_size;
+        bpos[1] = s[1] / pixel_size;
+      }
 
-    if (bpos[0] != s[0] / pixel_size && bpos[1] != s[1] / pixel_size)
-    {
-      bpos[0] = s[0] / pixel_size;
-      bpos[1] = s[1] / pixel_size;
-    }
+      destino[0] = (int)bpos[1];
+      destino[1] = (int)bpos[0];
 
-    destino[0] = (int)bpos[1];
-    destino[1] = (int)bpos[0];
+      destino_corrente[0] = destino[0];
+      destino_corrente[1] = destino[1];
+  #endif
 
-    destino_corrente[0] = destino[0];
-    destino_corrente[1] = destino[1];
-#endif
-
-#ifdef GENETICO
-    clock_t start, end;
-    double cpu_time_used;
-
-    start = clock();
-    s = GeneticAlgorithm(40, 2, dmin, dmax, 0, 100, 0);
-    end = clock();
-
-    cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-
-    avg_time += cpu_time_used;
-    qtdeCA++;
-
-    //FILE *ftime = fopen("time.txt", "a");
-
-    //fprintf(ftime, "%lf\n", cpu_time_used);
-    //fclose(ftime);
+  cout << "2>";
+  #ifdef SIMPLEX
+    s = SimplexAlgorithm();
 
     if (bpos[0] != s[0] / pixel_size && bpos[1] != s[1] / pixel_size)
-    {
-      bpos[0] = s[0] / pixel_size;
-      bpos[1] = s[1] / pixel_size;
-    }
+      {
+        bpos[0] = s[0] / pixel_size;
+        bpos[1] = s[1] / pixel_size;
+      }
 
-    destino[0] = (int)bpos[1];
-    destino[1] = (int)bpos[0];
+      destino[0] = (int)bpos[1];
+      destino[1] = (int)bpos[0];
 
-    destino_corrente[0] = destino[0];
-    destino_corrente[1] = destino[1];
-#endif
+      destino_corrente[0] = destino[0];
+      destino_corrente[1] = destino[1];
+  #endif
 
-#ifdef FIREFLY2
-    cout << "Chama Firefly" << endl;
-    clock_t start, end;
-    double cpu_time_used;
+  #ifdef FIREFLY2
+      cout << "Chama Firefly" << endl;
+      clock_t start, end;
+      double cpu_time_used;
 
-    start = clock();
-    s = FireflyAlgorithm();
-    end = clock();
+      start = clock();
+      s = FireflyAlgorithm();
+      end = clock();
 
-    FILE *faval = fopen("faval.txt", "a");
-    fprintf(faval, "%d\n", Aval);
-    fclose(faval);
+      FILE *faval = fopen("faval.txt", "a");
+      fprintf(faval, "%d\n", Aval);
+      fclose(faval);
 
-    cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+      cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
 
-    avg_aval += Aval;
-    Aval = 0;
-    avg_time += cpu_time_used;
-    qtdeCA++;
+      avg_aval += Aval;
+      Aval = 0;
+      avg_time += cpu_time_used;
+      qtdeCA++;
 
-    //FILE *ftime = fopen("time.txt", "a");
+      //FILE *ftime = fopen("time.txt", "a");
 
-    //fprintf(ftime, "%lf\n", cpu_time_used);
-    //fclose(ftime);
+      //fprintf(ftime, "%lf\n", cpu_time_used);
+      //fclose(ftime);
 
-    if (bpos[0] != s[0] / pixel_size && bpos[1] != s[1] / pixel_size)
-    {
-      bpos[0] = s[0] / pixel_size;
-      bpos[1] = s[1] / pixel_size;
-    }
+      if (bpos[0] != s[0] / pixel_size && bpos[1] != s[1] / pixel_size)
+      {
+        bpos[0] = s[0] / pixel_size;
+        bpos[1] = s[1] / pixel_size;
+      }
 
-    destino[0] = (int)bpos[1];
-    destino[1] = (int)bpos[0];
+      destino[0] = (int)bpos[1];
+      destino[1] = (int)bpos[0];
 
-    destino_corrente[0] = destino[0];
-    destino_corrente[1] = destino[1];
-#endif
+      destino_corrente[0] = destino[0];
+      destino_corrente[1] = destino[1];
+  #endif
   }
 
   geometry_msgs::PoseStamped _msg;
@@ -1653,8 +1516,7 @@ double SimplexFixo(double *indiv, int tam, int passos, int funcao)
   return min;
 }
 
-double SimplexRand(double *indiv, int tam, int passos, int funcao)
-{
+double SimplexRand(double *indiv, int tam, int passos, int funcao) {
   double erro = TAXERR;
   double Alfa, Beta, Gama;
   double min;
@@ -1666,6 +1528,25 @@ double SimplexRand(double *indiv, int tam, int passos, int funcao)
   min = Simplex(funccod[funcao], indiv, tam, erro, SCALE, passos, Alfa, Beta, Gama);
   return min;
 }
+
+double* SimplexAlgorithm() {
+  double erro = TAXERR;
+  double Alfa, Beta, Gama;
+  double min;
+
+  Alfa = randgen(VLALFA - 0.5, VLALFA + 0.5);
+  Beta = randgen(VLBETA - 0.5, VLBETA + 0.5);
+  Gama = randgen(VLGAMA - 0.5, VLGAMA + 0.5);
+
+  cout << "erro aqui";
+  double * start; start[0] = 0.0; start[1] = 0.0;
+
+  cout << "=> Executando Simplex ...";
+  double* best = SimplexMethod(funccod[funcao], start, 2, erro, SCALE, 1000, Alfa, Beta, Gama);
+  cout << "=> Simplex terminou a execução.";
+  return best;
+}
+
 /****/
 void IniciaSct(Populacao *p, int m, int n, int nfun)
 {
@@ -1748,24 +1629,24 @@ double *GeneticAlgorithm(int numFireflies, int dim, double *dmin, double *dmax, 
 
   int semente = 0;
 
-#ifdef LINHA
-  funcao = atoi(argv[2]);
-  strcpy(nomarq, GARE);
-  strcat(nomarq, limFixos[funcao].nom);
-  strcat(&nomarq[strlen(limFixos[funcao].nom)], argv[1]);
-  if (!(saida = fopen(nomarq, "w")))
-  {
-    perror("");
-    exit(-1);
-  }
+  #ifdef LINHA
+    funcao = atoi(argv[2]);
+    strcpy(nomarq, GARE);
+    strcat(nomarq, limFixos[funcao].nom);
+    strcat(&nomarq[strlen(limFixos[funcao].nom)], argv[1]);
+    if (!(saida = fopen(nomarq, "w")))
+    {
+      perror("");
+      exit(-1);
+    }
 
-  funcao = atoi(argv[2]);
-  semente = atoi(argv[3]);
-#endif
+    funcao = atoi(argv[2]);
+    semente = atoi(argv[3]);
+  #endif
 
-#ifdef NOLINHA
-  saida = stdout;
-#endif
+  #ifdef NOLINHA
+    saida = stdout;
+  #endif
 
   /* randomico ou não */
   srand((unsigned)time(0) + semente);
@@ -1792,45 +1673,45 @@ double *GeneticAlgorithm(int numFireflies, int dim, double *dmin, double *dmax, 
       else
         P.iguais++;
 
-#ifdef SIMPLEXO
-      if (pMuta > rand() % 100 && (MAXGER - numGeracoes) > (0.95 * MAXGER))
-      {
-        //                        fit = funccod[funcao](P.indiv[P.pior].var, P.tamInd);
-        fit = SimplexFixo(P.indiv[P.pior].var, P.tamInd, MaxIt, funcao);
-        P.numMuta++;
-      }
-      else
-      {
-        fit = funccod[funcao](P.indiv[P.pior].var, P.tamInd);
-      }
-#endif
-#ifdef SIMPLEND
-      if (pMuta > rand() % 100)
-      {
-        fit = SimplexRand(P.indiv[P.pior].var, P.tamInd, MaxIt, funcao);
-        P.numMuta++;
-      }
-      else
-      {
-        fit = funccod[funcao](P.indiv[P.pior].var, P.tamInd);
-      }
-#endif
-#ifdef NOSIMPLE
-      if (pMuta > rand() % 100)
-      {
-        nu_mutate(P.indiv[P.pior].var, P.tamInd, P.tamPop, MAXGER - numGeracoes, MNUNI);
-        P.numMuta++;
-      }
-      //                P.indiv[P.pior].var[0]=2.25;
-      //                P.indiv[P.pior].var[1]=1.6;
+  #ifdef SIMPLEXO
+        if (pMuta > rand() % 100 && (MAXGER - numGeracoes) > (0.95 * MAXGER))
+        {
+          //                        fit = funccod[funcao](P.indiv[P.pior].var, P.tamInd);
+          fit = SimplexFixo(P.indiv[P.pior].var, P.tamInd, MaxIt, funcao);
+          P.numMuta++;
+        }
+        else
+        {
+          fit = funccod[funcao](P.indiv[P.pior].var, P.tamInd);
+        }
+  #endif
+  #ifdef SIMPLEND
+        if (pMuta > rand() % 100)
+        {
+          fit = SimplexRand(P.indiv[P.pior].var, P.tamInd, MaxIt, funcao);
+          P.numMuta++;
+        }
+        else
+        {
+          fit = funccod[funcao](P.indiv[P.pior].var, P.tamInd);
+        }
+  #endif
+  #ifdef NOSIMPLE
+        if (pMuta > rand() % 100)
+        {
+          nu_mutate(P.indiv[P.pior].var, P.tamInd, P.tamPop, MAXGER - numGeracoes, MNUNI);
+          P.numMuta++;
+        }
+        //                P.indiv[P.pior].var[0]=2.25;
+        //                P.indiv[P.pior].var[1]=1.6;
 
-      fit = funccod[funcao](P.indiv[P.pior].var, P.tamInd);
-#endif
+        fit = funccod[funcao](P.indiv[P.pior].var, P.tamInd);
+  #endif
       AtualizaPop(&P, P.pior, fit, MAXGER - numGeracoes);
-#ifdef PASSO
-      if (!(numGeracoes % 20))
-        printf("\r\t %d) Minimo = %.16f ", MAXGER - numGeracoes, P.indiv[P.melhor].fit);
-#endif
+  #ifdef PASSO
+        if (!(numGeracoes % 20))
+          printf("\r\t %d) Minimo = %.16f ", MAXGER - numGeracoes, P.indiv[P.melhor].fit);
+  #endif
     }
     erro = (double)P.indiv[P.melhor].fit - SOLUCAO;
   }
@@ -1849,25 +1730,25 @@ double *GeneticAlgorithm(int numFireflies, int dim, double *dmin, double *dmax, 
   bestPosition[0] = P.indiv[P.melhor].var[0];
   bestPosition[1] = P.indiv[P.melhor].var[1];
 
-#ifdef XLS
+  #ifdef XLS
 
-  fprintf(saida, "\n%s)Min = %.10f; Aval= %d; Tempo = %.4f; Med = %.4f; Dpd = %.4f; Ger = %d",
-          nomarq, P.indiv[P.melhor].fit, Aval, (double)(end - start) / 118, med, dvp, P.gerMelhor);
+    fprintf(saida, "\n%s)Min = %.10f; Aval= %d; Tempo = %.4f; Med = %.4f; Dpd = %.4f; Ger = %d",
+            nomarq, P.indiv[P.melhor].fit, Aval, (double)(end - start) / 118, med, dvp, P.gerMelhor);
 
-#endif
+  #endif
 
-#ifdef CONSO
-  printf("\n\t Variaveis ...");
-  for (i = 0; i < P.tamInd; i++)
-  {
-    printf("\n\t\t%.6f", P.indiv[P.melhor].var[i]);
-  }
+  #ifdef CONSO
+    printf("\n\t Variaveis ...");
+    for (i = 0; i < P.tamInd; i++)
+    {
+      printf("\n\t\t%.6f", P.indiv[P.melhor].var[i]);
+    }
 
-  printf("\n\t Minimo = %.16f; \n\t Na ger = %d; \n\t mutacoes = %d \n\t ; aval = %d\n\t; erro = %f\n\t; (%.4f, %.4f)\n",
-        P.indiv[P.melhor].fit, P.gerMelhor, P.numMuta, Aval, erro, med, dvp);       
-  printf("\n\t em tempo = %.4f, ", (double) (end - start) / CLOCKS_PER_SEC);
-  //getchar();
-#endif
+    printf("\n\t Minimo = %.16f; \n\t Na ger = %d; \n\t mutacoes = %d \n\t ; aval = %d\n\t; erro = %f\n\t; (%.4f, %.4f)\n",
+          P.indiv[P.melhor].fit, P.gerMelhor, P.numMuta, Aval, erro, med, dvp);       
+    printf("\n\t em tempo = %.4f, ", (double) (end - start) / CLOCKS_PER_SEC);
+    //getchar();
+  #endif
 
   std::cout << "1\n";
 
@@ -1914,9 +1795,9 @@ double *FireflyAlgorithm()
 
   double newpos[2];
 
-#ifdef FIREFLY2
-  ini = NumClusters;
-#endif
+  #ifdef FIREFLY2
+    ini = NumClusters;
+  #endif
 
   for (i = 0; i < NumFireflies; i++)
   {
@@ -1968,17 +1849,17 @@ double *FireflyAlgorithm()
 
   cout << "entrou em FireflyAlgorithm..." << endl;
 
-//#define TESTCONVERGENCE
-#ifdef TESTCONVERGENCE
-  FILE *fpath2 = fopen("fireflies.txt", "w");
-  fprintf(fpath2, "[");
-  for (i = 0; i < NumFireflies; i++)
-  {
-    fprintf(fpath2, "%f, %f;", populacao[i]->GetPosicao()[1] / 0.1, populacao[i]->GetPosicao()[0] / 0.1);
-  }
-  fprintf(fpath2, "]\n");
-  fclose(fpath2);
-#endif
+  //#define TESTCONVERGENCE
+  #ifdef TESTCONVERGENCE
+    FILE *fpath2 = fopen("fireflies.txt", "w");
+    fprintf(fpath2, "[");
+    for (i = 0; i < NumFireflies; i++)
+    {
+      fprintf(fpath2, "%f, %f;", populacao[i]->GetPosicao()[1] / 0.1, populacao[i]->GetPosicao()[0] / 0.1);
+    }
+    fprintf(fpath2, "]\n");
+    fclose(fpath2);
+  #endif
 
   while (epoca < MaxEpocas)
   {
@@ -2057,16 +1938,16 @@ double *FireflyAlgorithm()
     epoca++;
   }
 
-#ifdef TESTCONVERGENCE
-  fpath2 = fopen("fireflies.txt", "a");
-  fprintf(fpath2, "[");
-  for (i = 0; i < NumFireflies; i++)
-  {
-    fprintf(fpath2, "%f, %f;", populacao[i]->GetPosicao()[1] / 0.1, populacao[i]->GetPosicao()[0] / 0.1);
-  }
-  fprintf(fpath2, "]\n");
-  fclose(fpath2);
-#endif
+  #ifdef TESTCONVERGENCE
+    fpath2 = fopen("fireflies.txt", "a");
+    fprintf(fpath2, "[");
+    for (i = 0; i < NumFireflies; i++)
+    {
+      fprintf(fpath2, "%f, %f;", populacao[i]->GetPosicao()[1] / 0.1, populacao[i]->GetPosicao()[0] / 0.1);
+    }
+    fprintf(fpath2, "]\n");
+    fclose(fpath2);
+  #endif
 
   if (bepoca > maxiEpocas)
   {
@@ -2078,42 +1959,42 @@ double *FireflyAlgorithm()
     minEpocas = bepoca;
   }
 
-#ifdef FIREFLY2
-  vector<Firefly *> newpop(NumFireflies);
+  #ifdef FIREFLY2
+    vector<Firefly *> newpop(NumFireflies);
 
-  // Evaluate:
-  for (i = 0; i < NumFireflies; i++)
-    populacao[i]->fitness = _FuncaoObjetivo(populacao[i]->GetPosicao(), _step);
-  n++;
+    // Evaluate:
+    for (i = 0; i < NumFireflies; i++)
+      populacao[i]->fitness = _FuncaoObjetivo(populacao[i]->GetPosicao(), _step);
+    n++;
 
-  //  Sort:
-  SortPop();
+    //  Sort:
+    SortPop();
 
-  newpop[0] = populacao[0];
-  k = 0;
-  double RC = 130.0;
-  for (i = 1; i < NumFireflies; i++)
-  {
-    if (newpop[k]->GetPosicao()[0] != populacao[i]->GetPosicao()[0] ||
-        newpop[k]->GetPosicao()[1] != populacao[i]->GetPosicao()[1])
+    newpop[0] = populacao[0];
+    k = 0;
+    double RC = 130.0;
+    for (i = 1; i < NumFireflies; i++)
     {
-      if (Distance(newpop[k]->GetPosicao(), populacao[i]->GetPosicao()) > RC)
+      if (newpop[k]->GetPosicao()[0] != populacao[i]->GetPosicao()[0] ||
+          newpop[k]->GetPosicao()[1] != populacao[i]->GetPosicao()[1])
       {
-        k++;
-        newpop[k] = populacao[i];
+        if (Distance(newpop[k]->GetPosicao(), populacao[i]->GetPosicao()) > RC)
+        {
+          k++;
+          newpop[k] = populacao[i];
+        }
       }
     }
-  }
 
-  for (i = 0; i < k; i++)
-  {
-    populacao[i] = newpop[i];
-  }
+    for (i = 0; i < k; i++)
+    {
+      populacao[i] = newpop[i];
+    }
 
-  NumClusters = k;
+    NumClusters = k;
 
-  cout << "NumClusters: " << NumClusters << endl;
-#endif
+    cout << "NumClusters: " << NumClusters << endl;
+  #endif
 
   n = 0;
   return bestPosition;
@@ -2284,23 +2165,23 @@ double _FuncaoObjetivo(double posicao[], int step)
     //cout << "F : " << -alpha*distF + beta*distR + 100* rho*distV  << endl;
     //cout << "distD: " << distD << endl;
 
-#ifdef FUNCAOPP
-    float lambda = 0.1;
-    return (-alpha * distF + beta * distR + rho * distV) / (lambda * dr);
-#endif
+  #ifdef FUNCAOPP
+      float lambda = 0.1;
+      return (-alpha * distF + beta * distR + rho * distV) / (lambda * dr);
+  #endif
 
-#ifdef FUNCAOPC
-    double k = 20;
-    if (dr < k)
-      return -alpha1 * distF + beta * distR + rho * distV;
-    else
-      return -alpha2 * distF + beta * distR + rho * distV;
-#endif
+  #ifdef FUNCAOPC
+      double k = 20;
+      if (dr < k)
+        return -alpha1 * distF + beta * distR + rho * distV;
+      else
+        return -alpha2 * distF + beta * distR + rho * distV;
+  #endif
 
-#ifdef FUNCAOPL
-    float lambda = 10;
-    return -alpha * distF + beta * distR + rho * distV + lambda * dr;
-#endif
+  #ifdef FUNCAOPL
+      float lambda = 10;
+      return -alpha * distF + beta * distR + rho * distV + lambda * dr;
+  #endif
   }
   else
   {
@@ -2358,45 +2239,45 @@ void GeraMapaObjetivo(int w, int h)
           distV += exp(-d / (2 * w3 * w3));
         }
 
-#ifdef FUNCAOPP
-        float lambda = 0.1;
-        _mapobj[i][j] = (-alpha * distF + beta * distR + rho * distV) / (lambda * dr);
-#endif
+  #ifdef FUNCAOPP
+          float lambda = 0.1;
+          _mapobj[i][j] = (-alpha * distF + beta * distR + rho * distV) / (lambda * dr);
+  #endif
 
-#ifdef FUNCAOPP_2
-        float lambda = 0.1;
-        _mapobj[i][j] = (-alpha * distF + beta * distR + rho * distV) / (lambda * dr);
-#endif
+  #ifdef FUNCAOPP_2
+          float lambda = 0.1;
+          _mapobj[i][j] = (-alpha * distF + beta * distR + rho * distV) / (lambda * dr);
+  #endif
 
-#ifdef FUNCAOPC
-        double k = 30;
-        if (dr < k)
-          _mapobj[i][j] = -alpha1 * distF + beta * distR + rho * distV;
+  #ifdef FUNCAOPC
+          double k = 30;
+          if (dr < k)
+            _mapobj[i][j] = -alpha1 * distF + beta * distR + rho * distV;
+          else
+            _mapobj[i][j] = -alpha2 * distF + beta * distR + rho * distV;
+
+  #endif
+
+  #ifdef FUNCAOPL
+
+          float lambda = 10;
+          _mapobj[i][j] = -alpha * distF + beta * distR + rho * distV + lambda * dr;
+
+  #endif
+        }
         else
-          _mapobj[i][j] = -alpha2 * distF + beta * distR + rho * distV;
+        {
+          _mapobj[i][j] = 100000000;
+        }
 
-#endif
+        if (melhor > _mapobj[i][j])
+        {
+          melhor = _mapobj[i][j];
 
-#ifdef FUNCAOPL
-
-        float lambda = 10;
-        _mapobj[i][j] = -alpha * distF + beta * distR + rho * distV + lambda * dr;
-
-#endif
-      }
-      else
-      {
-        _mapobj[i][j] = 100000000;
-      }
-
-      if (melhor > _mapobj[i][j])
-      {
-        melhor = _mapobj[i][j];
-
-#ifdef ENUMERATIVO
-        destino_corrente[0] = j;
-        destino_corrente[1] = i;
-#endif
+  #ifdef ENUMERATIVO
+          destino_corrente[0] = j;
+          destino_corrente[1] = i;
+  #endif
       }
     }
   }

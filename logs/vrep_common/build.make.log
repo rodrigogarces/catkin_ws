@@ -1,8 +1,8 @@
-[  0%] Built target _vrep_common_generate_messages_check_deps_simRosTransferFile
-[  0%] Built target _vrep_common_generate_messages_check_deps_simRosLoadUI
-[  0%] Built target _vrep_common_generate_messages_check_deps_simRosSetObjectIntParameter
-[  0%] Built target _vrep_common_generate_messages_check_deps_simRosGetVisionSensorDepthBuffer
-[  0%] Built target _vrep_common_generate_messages_check_deps_simRosGetModelProperty
-[  0%] Built target _vrep_common_generate_messages_check_deps_simRosGetObjectFloatParameter
-[  0%] Built target _vrep_common_generate_messages_check_deps_simRosGetArrayParameter
-[  0%] Built target _vrep_common_generate_messages_check_deps_simRosGetInfo
+[  0%] Built target _vrep_common_generate_messages_check_deps_simRosEnablePublisher
+[  0%] Built target _vrep_common_generate_messages_check_deps_simRosGetDialogInput
+[  0%] Built target _vrep_common_generate_messages_check_deps_simRosGetUIButtonProperty
+[  0%] Built target _vrep_common_generate_messages_check_deps_simRosSetIntegerParameter
+[  0%] Built target _vrep_common_generate_messages_check_deps_simRosClearIntegerSignal
+[  0%] Built target _vrep_common_generate_messages_check_deps_simRosSetUIButtonLabel
+[  0%] Built target _vrep_common_generate_messages_check_deps_simRosGetObjectIntParameter
+[  0%] Built target _vrep_common_generate_messages_check_deps_simRosGetVisionSensorImage

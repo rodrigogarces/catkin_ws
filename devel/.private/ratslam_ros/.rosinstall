@@ -1,2 +1,0 @@
-- setup-file:
-    local-name: /home/raphael/catkin_ws/devel/.private/ratslam_ros/setup.sh

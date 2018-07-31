@@ -1,4 +1,4 @@
-The system is: Linux - 4.13.0-36-generic - x86_64
+The system is: Linux - 4.15.0-29-generic - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler: /usr/bin/cc 
 Build flags: 
@@ -28,39 +28,39 @@ The CXX compiler identification is GNU, found in "/home/raphael/catkin_ws/build/
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_44087/fast"
-/usr/bin/make -f CMakeFiles/cmTC_44087.dir/build.make CMakeFiles/cmTC_44087.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_67d0f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_67d0f.dir/build.make CMakeFiles/cmTC_67d0f.dir/build
 make[1]: Entering directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_44087.dir/testCCompiler.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_44087.dir/testCCompiler.c.o   -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_44087
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44087.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_44087.dir/testCCompiler.c.o  -o cmTC_44087 -rdynamic 
+Building C object CMakeFiles/cmTC_67d0f.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_67d0f.dir/testCCompiler.c.o   -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_67d0f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_67d0f.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_67d0f.dir/testCCompiler.c.o  -o cmTC_67d0f -rdynamic 
 make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_eb07c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_eb07c.dir/build.make CMakeFiles/cmTC_eb07c.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_ed904/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ed904.dir/build.make CMakeFiles/cmTC_ed904.dir/build
 make[1]: Entering directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_eb07c.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_eb07c.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_eb07c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eb07c.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTC_eb07c.dir/CMakeCCompilerABI.c.o  -o cmTC_eb07c -rdynamic  
+Building C object CMakeFiles/cmTC_ed904.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_ed904.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_ed904
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed904.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_ed904.dir/CMakeCCompilerABI.c.o  -o cmTC_ed904 -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
 Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.9' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.10' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
-gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 
+gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_eb07c' '-rdynamic' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccIUztX7.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_eb07c /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_eb07c.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ed904' '-rdynamic' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccXrl89B.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_ed904 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_ed904.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
 make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
 
 
@@ -68,30 +68,30 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_eb07c/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_eb07c.dir/build.make CMakeFiles/cmTC_eb07c.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_ed904/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_ed904.dir/build.make CMakeFiles/cmTC_ed904.dir/build]
   ignore line: [make[1]: Entering directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_eb07c.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_eb07c.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_eb07c]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eb07c.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_eb07c.dir/CMakeCCompilerABI.c.o  -o cmTC_eb07c -rdynamic  ]
+  ignore line: [Building C object CMakeFiles/cmTC_ed904.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_ed904.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.5/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_ed904]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed904.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_ed904.dir/CMakeCCompilerABI.c.o  -o cmTC_ed904 -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
   ignore line: [Target: x86_64-linux-gnu]
-  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.9' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.10' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
-  ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ]
+  ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_eb07c' '-rdynamic' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccIUztX7.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_eb07c /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_eb07c.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_ed904' '-rdynamic' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccXrl89B.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_ed904 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_ed904.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccIUztX7.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccXrl89B.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -109,7 +109,7 @@ Parsed C implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_eb07c] ==> ignore
+    arg [cmTC_ed904] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -121,7 +121,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_eb07c.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_ed904.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -155,14 +155,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e3d2c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e3d2c.dir/build.make CMakeFiles/cmTC_e3d2c.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_b369e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b369e.dir/build.make CMakeFiles/cmTC_b369e.dir/build
 make[1]: Entering directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e3d2c.dir/feature_tests.c.o
-/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_e3d2c.dir/feature_tests.c.o   -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/feature_tests.c
-Linking C executable cmTC_e3d2c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e3d2c.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_e3d2c.dir/feature_tests.c.o  -o cmTC_e3d2c -rdynamic 
+Building C object CMakeFiles/cmTC_b369e.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_b369e.dir/feature_tests.c.o   -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/feature_tests.c
+Linking C executable cmTC_b369e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b369e.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_b369e.dir/feature_tests.c.o  -o cmTC_b369e -rdynamic 
 make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
 
 
@@ -175,14 +175,14 @@ make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_comm
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_dc89b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_dc89b.dir/build.make CMakeFiles/cmTC_dc89b.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_735c2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_735c2.dir/build.make CMakeFiles/cmTC_735c2.dir/build
 make[1]: Entering directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_dc89b.dir/feature_tests.c.o
-/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_dc89b.dir/feature_tests.c.o   -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/feature_tests.c
-Linking C executable cmTC_dc89b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc89b.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_dc89b.dir/feature_tests.c.o  -o cmTC_dc89b -rdynamic 
+Building C object CMakeFiles/cmTC_735c2.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_735c2.dir/feature_tests.c.o   -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/feature_tests.c
+Linking C executable cmTC_735c2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_735c2.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_735c2.dir/feature_tests.c.o  -o cmTC_735c2 -rdynamic 
 make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
 
 
@@ -195,14 +195,14 @@ make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_comm
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5b181/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5b181.dir/build.make CMakeFiles/cmTC_5b181.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_8af89/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8af89.dir/build.make CMakeFiles/cmTC_8af89.dir/build
 make[1]: Entering directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5b181.dir/feature_tests.c.o
-/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_5b181.dir/feature_tests.c.o   -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/feature_tests.c
-Linking C executable cmTC_5b181
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5b181.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_5b181.dir/feature_tests.c.o  -o cmTC_5b181 -rdynamic 
+Building C object CMakeFiles/cmTC_8af89.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_8af89.dir/feature_tests.c.o   -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/feature_tests.c
+Linking C executable cmTC_8af89
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8af89.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_8af89.dir/feature_tests.c.o  -o cmTC_8af89 -rdynamic 
 make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
 
 
@@ -213,39 +213,39 @@ make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_comm
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_86aa2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_86aa2.dir/build.make CMakeFiles/cmTC_86aa2.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_56607/fast"
+/usr/bin/make -f CMakeFiles/cmTC_56607.dir/build.make CMakeFiles/cmTC_56607.dir/build
 make[1]: Entering directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_86aa2.dir/testCXXCompiler.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_86aa2.dir/testCXXCompiler.cxx.o -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_86aa2
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_86aa2.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_86aa2.dir/testCXXCompiler.cxx.o  -o cmTC_86aa2 -rdynamic 
+Building CXX object CMakeFiles/cmTC_56607.dir/testCXXCompiler.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_56607.dir/testCXXCompiler.cxx.o -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_56607
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_56607.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_56607.dir/testCXXCompiler.cxx.o  -o cmTC_56607 -rdynamic 
 make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7ab56/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7ab56.dir/build.make CMakeFiles/cmTC_7ab56.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_37a9e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_37a9e.dir/build.make CMakeFiles/cmTC_37a9e.dir/build
 make[1]: Entering directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_7ab56.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++      -o CMakeFiles/cmTC_7ab56.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_7ab56
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ab56.dir/link.txt --verbose=1
-/usr/bin/c++       -v CMakeFiles/cmTC_7ab56.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_7ab56 -rdynamic  
+Building CXX object CMakeFiles/cmTC_37a9e.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++      -o CMakeFiles/cmTC_37a9e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_37a9e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37a9e.dir/link.txt --verbose=1
+/usr/bin/c++       -v CMakeFiles/cmTC_37a9e.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_37a9e -rdynamic  
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
 Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.9' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.10' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
-gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 
+gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7ab56' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6raKvZ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_7ab56 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_7ab56.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_37a9e' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccs7bTxc.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_37a9e /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_37a9e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o
 make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
 
 
@@ -253,30 +253,30 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_7ab56/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_7ab56.dir/build.make CMakeFiles/cmTC_7ab56.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_37a9e/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_37a9e.dir/build.make CMakeFiles/cmTC_37a9e.dir/build]
   ignore line: [make[1]: Entering directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_7ab56.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_7ab56.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_7ab56]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ab56.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_7ab56.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_7ab56 -rdynamic  ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_37a9e.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_37a9e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.5/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_37a9e]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_37a9e.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_37a9e.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_37a9e -rdynamic  ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper]
   ignore line: [Target: x86_64-linux-gnu]
-  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.9' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.10' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
-  ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.9) ]
+  ignore line: [gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/5/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/5/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_7ab56' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/cc6raKvZ.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_7ab56 /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_7ab56.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_37a9e' '-rdynamic' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/5/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper -plugin-opt=-fresolution=/tmp/ccs7bTxc.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -z relro -o cmTC_37a9e /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/5 -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/5/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/5/../../.. CMakeFiles/cmTC_37a9e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/5/crtend.o /usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc6raKvZ.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccs7bTxc.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -294,7 +294,7 @@ Parsed CXX implicit link information from above output:
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_7ab56] ==> ignore
+    arg [cmTC_37a9e] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/5/crtbegin.o] ==> ignore
@@ -306,7 +306,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/5/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/5/../../..]
-    arg [CMakeFiles/cmTC_7ab56.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_37a9e.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -338,14 +338,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4135a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4135a.dir/build.make CMakeFiles/cmTC_4135a.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_76f0f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_76f0f.dir/build.make CMakeFiles/cmTC_76f0f.dir/build
 make[1]: Entering directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_4135a.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_4135a.dir/feature_tests.cxx.o -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_4135a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4135a.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_4135a.dir/feature_tests.cxx.o  -o cmTC_4135a -rdynamic 
+Building CXX object CMakeFiles/cmTC_76f0f.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_76f0f.dir/feature_tests.cxx.o -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_76f0f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_76f0f.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_76f0f.dir/feature_tests.cxx.o  -o cmTC_76f0f -rdynamic 
 make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
 
 
@@ -411,14 +411,14 @@ make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_comm
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b9864/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b9864.dir/build.make CMakeFiles/cmTC_b9864.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_6196c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6196c.dir/build.make CMakeFiles/cmTC_6196c.dir/build
 make[1]: Entering directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_b9864.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_b9864.dir/feature_tests.cxx.o -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_b9864
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9864.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_b9864.dir/feature_tests.cxx.o  -o cmTC_b9864 -rdynamic 
+Building CXX object CMakeFiles/cmTC_6196c.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_6196c.dir/feature_tests.cxx.o -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_6196c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6196c.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_6196c.dir/feature_tests.cxx.o  -o cmTC_6196c -rdynamic 
 make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
 
 
@@ -484,14 +484,14 @@ make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_comm
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1d2e2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1d2e2.dir/build.make CMakeFiles/cmTC_1d2e2.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_53207/fast"
+/usr/bin/make -f CMakeFiles/cmTC_53207.dir/build.make CMakeFiles/cmTC_53207.dir/build
 make[1]: Entering directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_1d2e2.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_1d2e2.dir/feature_tests.cxx.o -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_1d2e2
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1d2e2.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_1d2e2.dir/feature_tests.cxx.o  -o cmTC_1d2e2 -rdynamic 
+Building CXX object CMakeFiles/cmTC_53207.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_53207.dir/feature_tests.cxx.o -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_53207
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53207.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_53207.dir/feature_tests.cxx.o  -o cmTC_53207 -rdynamic 
 make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
 
 
@@ -555,28 +555,28 @@ make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_comm
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_36c36/fast"
-/usr/bin/make -f CMakeFiles/cmTC_36c36.dir/build.make CMakeFiles/cmTC_36c36.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_254f3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_254f3.dir/build.make CMakeFiles/cmTC_254f3.dir/build
 make[1]: Entering directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_36c36.dir/CheckIncludeFile.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_36c36.dir/CheckIncludeFile.c.o   -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_36c36
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_36c36.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_36c36.dir/CheckIncludeFile.c.o  -o cmTC_36c36 -rdynamic 
+Building C object CMakeFiles/cmTC_254f3.dir/CheckIncludeFile.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_254f3.dir/CheckIncludeFile.c.o   -c /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_254f3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_254f3.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_254f3.dir/CheckIncludeFile.c.o  -o cmTC_254f3 -rdynamic 
 make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4d481/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4d481.dir/build.make CMakeFiles/cmTC_4d481.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_e1be4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e1be4.dir/build.make CMakeFiles/cmTC_e1be4.dir/build
 make[1]: Entering directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4d481.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_4d481.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_4d481
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4d481.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_4d481.dir/CheckFunctionExists.c.o  -o cmTC_4d481 -rdynamic -lpthread 
+Building C object CMakeFiles/cmTC_e1be4.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e1be4.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e1be4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1be4.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_e1be4.dir/CheckFunctionExists.c.o  -o cmTC_e1be4 -rdynamic -lpthread 
 make[1]: Leaving directory '/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeTmp'
 
 

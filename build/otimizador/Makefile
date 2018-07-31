@@ -1193,6 +1193,19 @@ actionlib_msgs_generate_messages_nodejs/fast:
 .PHONY : actionlib_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
+# Target rules for targets named OptimizationMethods
+
+# Build rule for target.
+OptimizationMethods: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 OptimizationMethods
+.PHONY : OptimizationMethods
+
+# fast build rule for target.
+OptimizationMethods/fast:
+	$(MAKE) -f CMakeFiles/OptimizationMethods.dir/build.make CMakeFiles/OptimizationMethods.dir/build
+.PHONY : OptimizationMethods/fast
+
+#=============================================================================
 # Target rules for targets named tf2_msgs_generate_messages_py
 
 # Build rule for target.
@@ -1871,6 +1884,33 @@ src/Node.cpp.s:
 	$(MAKE) -f CMakeFiles/Node.dir/build.make CMakeFiles/Node.dir/src/Node.cpp.s
 .PHONY : src/Node.cpp.s
 
+src/OptimizationMethods.o: src/OptimizationMethods.cpp.o
+
+.PHONY : src/OptimizationMethods.o
+
+# target to build an object file
+src/OptimizationMethods.cpp.o:
+	$(MAKE) -f CMakeFiles/OptimizationMethods.dir/build.make CMakeFiles/OptimizationMethods.dir/src/OptimizationMethods.cpp.o
+.PHONY : src/OptimizationMethods.cpp.o
+
+src/OptimizationMethods.i: src/OptimizationMethods.cpp.i
+
+.PHONY : src/OptimizationMethods.i
+
+# target to preprocess a source file
+src/OptimizationMethods.cpp.i:
+	$(MAKE) -f CMakeFiles/OptimizationMethods.dir/build.make CMakeFiles/OptimizationMethods.dir/src/OptimizationMethods.cpp.i
+.PHONY : src/OptimizationMethods.cpp.i
+
+src/OptimizationMethods.s: src/OptimizationMethods.cpp.s
+
+.PHONY : src/OptimizationMethods.s
+
+# target to generate assembly for a file
+src/OptimizationMethods.cpp.s:
+	$(MAKE) -f CMakeFiles/OptimizationMethods.dir/build.make CMakeFiles/OptimizationMethods.dir/src/OptimizationMethods.cpp.s
+.PHONY : src/OptimizationMethods.cpp.s
+
 src/otimizador.o: src/otimizador.cpp.o
 
 .PHONY : src/otimizador.o
@@ -1989,6 +2029,7 @@ help:
 	@echo "... map_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_nodejs"
+	@echo "... OptimizationMethods"
 	@echo "... tf2_msgs_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_cpp"
@@ -2045,6 +2086,9 @@ help:
 	@echo "... src/Node.o"
 	@echo "... src/Node.i"
 	@echo "... src/Node.s"
+	@echo "... src/OptimizationMethods.o"
+	@echo "... src/OptimizationMethods.i"
+	@echo "... src/OptimizationMethods.s"
 	@echo "... src/otimizador.o"
 	@echo "... src/otimizador.i"
 	@echo "... src/otimizador.s"

@@ -1,4 +1,0 @@
-/home/raphael/catkin_ws/build/otimizador/setup_custom_pythonpath.sh: 4: exec: /home/raphael/catkin_ws/src/otimizador/cfg/dynamic_reconfigure.cfg: Permission denied
-make[2]: *** [/home/raphael/catkin_ws/devel/.private/otimizador/include/otimizador/dynamic_reconfigureConfig.h] Error 126
-make[1]: *** [CMakeFiles/otimizador_gencfg.dir/all] Error 2
-make: *** [all] Error 2

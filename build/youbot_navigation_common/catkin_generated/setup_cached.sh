@@ -11,5 +11,4 @@ export CMAKE_PREFIX_PATH="/home/raphael/catkin_ws/devel/.private/youbot_navigati
 export LD_LIBRARY_PATH="/home/raphael/catkin_ws/devel/.private/youbot_navigation_common/lib:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="/home/raphael/catkin_ws/devel/.private/youbot_navigation_common/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/raphael/catkin_ws/build/youbot_navigation_common"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/raphael/catkin_ws/devel/.private/youbot_navigation_common/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/raphael/catkin_ws/src/youbot_navigation/youbot_navigation_common:$ROS_PACKAGE_PATH"

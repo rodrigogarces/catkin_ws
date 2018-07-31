@@ -2,16 +2,11 @@ otimizador
 /home/raphael/catkin_ws/devel/.private/otimizador/lib/libFirefly.so /home/raphael/catkin_ws/devel/lib/libFirefly.so
 /home/raphael/catkin_ws/devel/.private/otimizador/lib/libNode.so /home/raphael/catkin_ws/devel/lib/libNode.so
 /home/raphael/catkin_ws/devel/.private/otimizador/lib/libAStar.so /home/raphael/catkin_ws/devel/lib/libAStar.so
+/home/raphael/catkin_ws/devel/.private/otimizador/lib/libOptimizationMethods.so /home/raphael/catkin_ws/devel/lib/libOptimizationMethods.so
 /home/raphael/catkin_ws/devel/.private/otimizador/lib/pkgconfig/otimizador.pc /home/raphael/catkin_ws/devel/lib/pkgconfig/otimizador.pc
 /home/raphael/catkin_ws/devel/.private/otimizador/lib/python2.7/dist-packages/otimizador/__init__.py /home/raphael/catkin_ws/devel/lib/python2.7/dist-packages/otimizador/__init__.py
-/home/raphael/catkin_ws/devel/.private/otimizador/lib/python2.7/dist-packages/otimizador/cfg/__init__.py /home/raphael/catkin_ws/devel/lib/python2.7/dist-packages/otimizador/cfg/__init__.py
-/home/raphael/catkin_ws/devel/.private/otimizador/lib/python2.7/dist-packages/otimizador/cfg/OtimizadorConfig.py /home/raphael/catkin_ws/devel/lib/python2.7/dist-packages/otimizador/cfg/OtimizadorConfig.py
 /home/raphael/catkin_ws/devel/.private/otimizador/lib/otimizador/otimizador /home/raphael/catkin_ws/devel/lib/otimizador/otimizador
-/home/raphael/catkin_ws/devel/.private/otimizador/include/otimizador/OtimizadorConfig.h /home/raphael/catkin_ws/devel/include/otimizador/OtimizadorConfig.h
 /home/raphael/catkin_ws/devel/.private/otimizador/share/roseus/ros/otimizador/manifest.l /home/raphael/catkin_ws/devel/share/roseus/ros/otimizador/manifest.l
-/home/raphael/catkin_ws/devel/.private/otimizador/share/otimizador/docs/OtimizadorConfig-usage.dox /home/raphael/catkin_ws/devel/share/otimizador/docs/OtimizadorConfig-usage.dox
-/home/raphael/catkin_ws/devel/.private/otimizador/share/otimizador/docs/OtimizadorConfig.dox /home/raphael/catkin_ws/devel/share/otimizador/docs/OtimizadorConfig.dox
-/home/raphael/catkin_ws/devel/.private/otimizador/share/otimizador/docs/OtimizadorConfig.wikidoc /home/raphael/catkin_ws/devel/share/otimizador/docs/OtimizadorConfig.wikidoc
 /home/raphael/catkin_ws/devel/.private/otimizador/share/otimizador/cmake/otimizador-msg-extras.cmake /home/raphael/catkin_ws/devel/share/otimizador/cmake/otimizador-msg-extras.cmake
 /home/raphael/catkin_ws/devel/.private/otimizador/share/otimizador/cmake/otimizadorConfig-version.cmake /home/raphael/catkin_ws/devel/share/otimizador/cmake/otimizadorConfig-version.cmake
 /home/raphael/catkin_ws/devel/.private/otimizador/share/otimizador/cmake/otimizador-msg-paths.cmake /home/raphael/catkin_ws/devel/share/otimizador/cmake/otimizador-msg-paths.cmake

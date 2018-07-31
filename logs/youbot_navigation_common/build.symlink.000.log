@@ -1,0 +1,4 @@
+Symlinking /home/raphael/catkin_ws/devel/lib/pkgconfig/youbot_navigation_common.pc
+Symlinking /home/raphael/catkin_ws/devel/lib/youbot_navigation_common/lowpass_filter
+Symlinking /home/raphael/catkin_ws/devel/share/youbot_navigation_common/cmake/youbot_navigation_commonConfig.cmake
+Symlinking /home/raphael/catkin_ws/devel/share/youbot_navigation_common/cmake/youbot_navigation_commonConfig-version.cmake

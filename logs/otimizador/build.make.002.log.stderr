@@ -1,7 +1,0 @@
-[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:20:45:[m[K [01;31m[Kfatal error: [m[Kdynamic_params/OtimizadorConfig.h: Arquivo ou diretório não encontrado
- #include <dynamic_params/OtimizadorConfig.h>
-[01;32m[K                                             ^[m[K
-compilation terminated.
-make[2]: *** [CMakeFiles/otimizador.dir/src/otimizador.cpp.o] Error 1
-make[1]: *** [CMakeFiles/otimizador.dir/all] Error 2
-make: *** [all] Error 2

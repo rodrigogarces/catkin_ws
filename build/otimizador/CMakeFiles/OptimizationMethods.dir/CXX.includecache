@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/raphael/catkin_ws/src/otimizador/src/OptimizationMethods.cpp
+OptimizationMethods.h
+/home/raphael/catkin_ws/src/otimizador/src/OptimizationMethods.h
+math.h
+-
+stdlib.h
+-
+
+/home/raphael/catkin_ws/src/otimizador/src/OptimizationMethods.h
+

@@ -1,0 +1,10 @@
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:[m[K In function ‘[01m[Kdouble* SimplexAlgorithm()[m[K’:
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:1541:3:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kdouble[m[K’
+   double* best = SimplexMethod(funccod[funcao], start, 2, erro, SCALE, 1000, Alfa, Beta, Gama);
+[01;32m[K   ^[m[K
+[01m[K/home/raphael/catkin_ws/src/otimizador/src/otimizador.cpp:1543:3:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kreturn[m[K’
+   return best;
+[01;32m[K   ^[m[K
+make[2]: *** [CMakeFiles/otimizador.dir/src/otimizador.cpp.o] Error 1
+make[1]: *** [CMakeFiles/otimizador.dir/all] Error 2
+make: *** [all] Error 2

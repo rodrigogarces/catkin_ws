@@ -1,0 +1,9 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/lowpass_filter.dir/src/lowpass_filter.cpp.o[0m
+[01m[K/home/raphael/catkin_ws/src/youbot_navigation/youbot_navigation_common/src/lowpass_filter.cpp:1:21:[m[K [01;31m[Kfatal error: [m[Kros/ros.h: Arquivo ou diretório não encontrado
+compilation terminated.
+CMakeFiles/lowpass_filter.dir/build.make:62: recipe for target 'CMakeFiles/lowpass_filter.dir/src/lowpass_filter.cpp.o' failed
+make[2]: *** [CMakeFiles/lowpass_filter.dir/src/lowpass_filter.cpp.o] Error 1
+CMakeFiles/Makefile2:227: recipe for target 'CMakeFiles/lowpass_filter.dir/all' failed
+make[1]: *** [CMakeFiles/lowpass_filter.dir/all] Error 2
+Makefile:138: recipe for target 'all' failed
+make: *** [all] Error 2

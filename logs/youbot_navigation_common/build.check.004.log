@@ -1,0 +1,7 @@
+CMake Error: Error in cmake code at
+/home/raphael/catkin_ws/src/youbot_navigation/youbot_navigation_common/CMakeLists.txt:1:
+[36m--[0m Configuring incomplete, errors occurred!
+See also "/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeOutput.log".
+See also "/home/raphael/catkin_ws/build/youbot_navigation_common/CMakeFiles/CMakeError.log".
+Makefile:614: recipe for target 'cmake_check_build_system' failed
+make: *** [cmake_check_build_system] Error 1

@@ -9,5 +9,4 @@
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/raphael/catkin_ws/devel/.private/vrep_common:$CMAKE_PREFIX_PATH"
 export PWD="/home/raphael/catkin_ws/build/vrep_common"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/raphael/catkin_ws/devel/.private/vrep_common/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/raphael/catkin_ws/src/vrep_common:$ROS_PACKAGE_PATH"

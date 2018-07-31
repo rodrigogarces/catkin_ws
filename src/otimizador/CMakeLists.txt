@@ -47,8 +47,11 @@ target_link_libraries(AStar ${catkin_LIBRARIES} Node)
 add_library(Firefly src/Firefly.cpp)
 target_link_libraries(Firefly ${catkin_LIBRARIES})
 
+add_library(OptimizationMethods src/OptimizationMethods.cpp)
+target_link_libraries(OptimizationMethods ${catkin_LIBRARIES})
+
 add_executable(otimizador src/otimizador.cpp)
-target_link_libraries(otimizador ${catkin_LIBRARIES} Firefly AStar)
+target_link_libraries(otimizador ${catkin_LIBRARIES} Firefly AStar OptimizationMethods)
 #add_dependencies(otimizador otimizador_generate_target_cpp)
 
 

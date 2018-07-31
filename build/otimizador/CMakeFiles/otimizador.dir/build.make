@@ -350,6 +350,7 @@ otimizador_EXTERNAL_OBJECTS =
 /home/raphael/catkin_ws/devel/.private/otimizador/lib/otimizador/otimizador: /usr/lib/x86_64-linux-gnu/libtinyxml.so
 /home/raphael/catkin_ws/devel/.private/otimizador/lib/otimizador/otimizador: /home/raphael/catkin_ws/devel/.private/otimizador/lib/libFirefly.so
 /home/raphael/catkin_ws/devel/.private/otimizador/lib/otimizador/otimizador: /home/raphael/catkin_ws/devel/.private/otimizador/lib/libAStar.so
+/home/raphael/catkin_ws/devel/.private/otimizador/lib/otimizador/otimizador: /home/raphael/catkin_ws/devel/.private/otimizador/lib/libOptimizationMethods.so
 /home/raphael/catkin_ws/devel/.private/otimizador/lib/otimizador/otimizador: /home/raphael/catkin_ws/devel/.private/otimizador/lib/libNode.so
 /home/raphael/catkin_ws/devel/.private/otimizador/lib/otimizador/otimizador: /opt/ros/kinetic/lib/libcostmap_2d.so
 /home/raphael/catkin_ws/devel/.private/otimizador/lib/otimizador/otimizador: /opt/ros/kinetic/lib/liblayers.so

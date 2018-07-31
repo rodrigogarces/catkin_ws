@@ -1,8 +1,0 @@
-prefix=/home/raphael/catkin_ws/devel/.private/ratslam_ros
-
-Name: ratslam_ros
-Description: Description of ratslam_ros
-Version: 0.0.1
-Cflags: -I/home/raphael/catkin_ws/devel/.private/ratslam_ros/include
-Libs: -L/home/raphael/catkin_ws/devel/.private/ratslam_ros/lib 
-Requires: message_runtime geometry_msgs std_msgs

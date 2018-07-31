@@ -1,0 +1,4 @@
+make[2]: *** No rule to make target '/home/raphael/catkin_ws/src/otimizador/src/OptimizationMethods.c', needed by 'CMakeFiles/OptimizationMethods.dir/src/OptimizationMethods.c.o'.  Pare.
+make[1]: *** [CMakeFiles/OptimizationMethods.dir/all] Error 2
+make[1]: ** Esperando que outros processos terminem.
+make: *** [all] Error 2
