@@ -8,5 +8,7 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/raphael/catkin_ws/devel/.private/vrep_ros_interface:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/raphael/catkin_ws/devel/.private/vrep_ros_interface/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/raphael/catkin_ws/devel/.private/vrep_ros_interface/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/raphael/catkin_ws/build/vrep_ros_interface"
 export ROS_PACKAGE_PATH="/home/raphael/catkin_ws/src/vrep_ros_interface:$ROS_PACKAGE_PATH"

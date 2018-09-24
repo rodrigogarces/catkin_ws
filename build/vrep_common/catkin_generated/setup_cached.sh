@@ -8,5 +8,8 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/raphael/catkin_ws/devel/.private/vrep_common:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/raphael/catkin_ws/devel/.private/vrep_common/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/raphael/catkin_ws/devel/.private/vrep_common/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/raphael/catkin_ws/build/vrep_common"
+export PYTHONPATH="/home/raphael/catkin_ws/devel/.private/vrep_common/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROS_PACKAGE_PATH="/home/raphael/catkin_ws/src/vrep_common:$ROS_PACKAGE_PATH"

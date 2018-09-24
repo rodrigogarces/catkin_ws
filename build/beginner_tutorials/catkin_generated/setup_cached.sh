@@ -8,5 +8,7 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/raphael/catkin_ws/devel/.private/beginner_tutorials:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/raphael/catkin_ws/devel/.private/beginner_tutorials/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/raphael/catkin_ws/devel/.private/beginner_tutorials/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/raphael/catkin_ws/build/beginner_tutorials"
 export ROS_PACKAGE_PATH="/home/raphael/catkin_ws/src/beginner_tutorials:$ROS_PACKAGE_PATH"

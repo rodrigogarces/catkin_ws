@@ -8,5 +8,7 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/raphael/catkin_ws/devel/.private/youbot_navigation_global:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/raphael/catkin_ws/devel/.private/youbot_navigation_global/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/raphael/catkin_ws/devel/.private/youbot_navigation_global/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/raphael/catkin_ws/build/youbot_navigation_global"
 export ROS_PACKAGE_PATH="/home/raphael/catkin_ws/src/youbot_navigation/youbot_navigation_global:$ROS_PACKAGE_PATH"

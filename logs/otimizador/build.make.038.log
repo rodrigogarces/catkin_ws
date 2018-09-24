@@ -1,0 +1,27 @@
+[  9%] [32mBuilding CXX object CMakeFiles/Firefly.dir/src/Firefly.cpp.o[0m
+[ 18%] [32m[1mLinking CXX shared library /home/raphael/catkin_ws/devel/.private/otimizador/lib/libFirefly.so[0m
+[ 18%] Built target Firefly
+[ 18%] Built target std_msgs_generate_messages_cpp
+[ 18%] Built target std_msgs_generate_messages_py
+[ 18%] Built target std_msgs_generate_messages_nodejs
+[ 18%] Built target std_msgs_generate_messages_lisp
+[ 18%] Built target std_msgs_generate_messages_eus
+[ 27%] [32mBuilding CXX object CMakeFiles/OptimizationMethods.dir/src/OptimizationMethods.cpp.o[0m
+[ 36%] [32m[1mLinking CXX shared library /home/raphael/catkin_ws/devel/.private/otimizador/lib/libOptimizationMethods.so[0m
+[ 36%] Built target OptimizationMethods
+[ 45%] [32mBuilding CXX object CMakeFiles/Node.dir/src/Node.cpp.o[0m
+[ 45%] Built target otimizador_generate_messages_cpp
+[ 45%] Built target otimizador_generate_messages_py
+[ 45%] Built target otimizador_generate_messages_nodejs
+[ 45%] Built target otimizador_generate_messages_lisp
+[ 54%] Built target otimizador_generate_messages_eus
+[ 54%] Built target otimizador_generate_messages
+[ 63%] [32m[1mLinking CXX shared library /home/raphael/catkin_ws/devel/.private/otimizador/lib/libNode.so[0m
+[ 63%] Built target Node
+[ 72%] [32mBuilding CXX object CMakeFiles/AStar.dir/src/AStar.cpp.o[0m
+[ 81%] [32m[1mLinking CXX shared library /home/raphael/catkin_ws/devel/.private/otimizador/lib/libAStar.so[0m
+[ 81%] Built target AStar
+[35m[1mScanning dependencies of target otimizador[0m
+[ 90%] [32mBuilding CXX object CMakeFiles/otimizador.dir/src/otimizador.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/raphael/catkin_ws/devel/.private/otimizador/lib/otimizador/otimizador[0m
+[100%] Built target otimizador

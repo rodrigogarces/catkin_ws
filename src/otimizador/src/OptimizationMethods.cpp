@@ -39,6 +39,7 @@ double* SimplexMethod(double (*func)(double[], int n), double start[], int n, do
   ve = (double *)malloc(n * sizeof(double));
   vc = (double *)malloc(n * sizeof(double));
   vm = (double *)malloc(n * sizeof(double));
+  vb = (double *)malloc(n * sizeof(double));
 
   /* allocate the columns of the arrays */
   for (i = 0; i <= n; i++)
@@ -288,7 +289,7 @@ double* SimplexMethod(double (*func)(double[], int n), double start[], int n, do
   //  fprintf("%d Function Evaluations\n",k);
   //  fprintf("%d Iterations through program\n",itr);
 
-  for (i = 0; i <= n; i++)
+  for (i = 0; i < n; i++)
   {
     free(v[i]);
   }

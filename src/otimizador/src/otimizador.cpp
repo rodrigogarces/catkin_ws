@@ -33,11 +33,11 @@
 //#define FIREFLY
 //#define FIREFLY2
 //#define ENUMERATIVO
-#define SIMPLEX
+#define SIMPLEXALG
 
 //#define GERAFUNCAO
 
-#define _USE_MATH_DcEFINES
+//#define _USE_MATH_DcEFINES
 
 #define ESTRATEGIA_1 // Espera robô chegar ao objetivo para otimizar novamente
 
@@ -110,7 +110,7 @@
 using namespace std;
 using namespace grid_map;
 
-//PARAMETROS DO ALGORITMO DE VAGALUMES:================
+//=== PARAMETROS DO ALGORITMO DE VAGALUMES ====
 int MaxEpocas = 250; // 150
 int NumFireflies = 40;
 
@@ -128,7 +128,7 @@ int maxiEpocas = 0;
 int minEpocas = 1000000;
 
 vector<Firefly *> populacao(NumFireflies);
-//========================================
+//=============================================
 
 
 //PARAMETROS DO FUNCAO OBJETIVO:==========
@@ -366,7 +366,13 @@ void costmapCallback(const nav_msgs::OccupancyGrid::ConstPtr &cmap)
 }
 
 void inicilizaVariaeis(const nav_msgs::OccupancyGrid::ConstPtr &map){
-    // TODO: carregar variaveis locais necessárias
+
+}
+
+void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr &map)
+{
+
+      // TODO: carregar variaveis locais necessárias
   w = map->info.width;  // Largura do mapa
   h = map->info.height; // Altura do mapa
 
@@ -419,11 +425,6 @@ void inicilizaVariaeis(const nav_msgs::OccupancyGrid::ConstPtr &map){
   fi = 0;
   ri = 0;
   di = 0;
-}
-
-void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr &map)
-{
-  inicilizaVariaeis(map);
 
   nav_msgs::GridCells rdanger;
   std::string frameid = "/map";
@@ -690,8 +691,11 @@ void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr &map)
     dis = sqrt((destino_corrente[0] - robot_position[0]) * (destino_corrente[0] - robot_position[0]) + (destino_corrente[1] - robot_position[1]) * (destino_corrente[1] - robot_position[1])); // distância entre o robô e o alvo
 
   // -> Se a distância é menor que a distancia minima, o alvo não é atualizado
+  if (dilatedMap[destino_corrente[1]][destino_corrente[0]] != 0)
+    has_goal = false;
 
   cout << "Distancia Alvo-Robo: " << dis << endl;
+  cout << "Distancia Alvo-Robo: " << has_goal << endl;
   if (dis < DIST_MIN)
     has_goal = false;
   else
@@ -849,7 +853,7 @@ void mapCallback(const nav_msgs::OccupancyGrid::ConstPtr &map)
   #endif
 
   cout << "2>";
-  #ifdef SIMPLEX
+  #ifdef SIMPLEXALG
     s = SimplexAlgorithm();
 
     if (bpos[0] != s[0] / pixel_size && bpos[1] != s[1] / pixel_size)
