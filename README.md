@@ -21,22 +21,49 @@ edit autoexec.bat
 
 ## Exemplo de uso
 
-Alguns exemplos interessantes e úteis sobre como seu projeto pode ser utilizado. Adicione blocos de códigos e, se necessário, screenshots.
+Inicie o ros:
 
-_Para mais exemplos, consulte a [Wiki][wiki]._ 
+```sh
+roscore
+```
+
+Configure o parâmetro use_sim_time como true ().
+
+```sh
+rosparam set use_sim_time true
+```
+
+Inicie nodes necessários dos pacotes gmapping, ros navigation e youbot_navigation:
+
+```sh
+roslaunch target_generator target_generator.launch
+```
+Inicie o node gerador de targets:
+
+```sh
+rosrun target_generator target_generator
+```
+
+Abra o V-REP e inicie a simulação.
 
 ## Configuração para Desenvolvimento
 
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
+Clone o projeto do github na pasta src de seu ros workspace:
 
 ```sh
-make install
-npm test
+cd (your_ros_ws)/src
+git clone https://github.com/yourname/github-link
+```
+Compile (Recomendo usar [Catkin Command Line Tools](http://mcs.une.edu.au/doc/python-catkin_tools-doc/html/)):
+
+```sh
+cd ..
+catkin build
 ```
 
 ## Meta
 
-Seu Nome – [@SeuNome](https://twitter.com/...) – SeuEmail@exemplo.com
+Raphael Gomes – raphaelgoms@gmail.com
 
 Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
 
@@ -49,13 +76,3 @@ Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
 3. Faça o _commit_ (`git commit -am 'Add some fooBar'`)
 4. _Push_ (`git push origin feature/fooBar`)
 5. Crie um novo _Pull Request_
-
-[npm-image]: https://img.shields.io/npm/v/datadog-metrics.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/datadog-metrics
-[npm-downloads]: https://img.shields.io/npm/dm/datadog-metrics.svg?style=flat-square
-[travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-[wiki]: https://github.com/seunome/seuprojeto/wiki
-
-#OBS
-[noSQL-bank]: https://docs.microsoft.com/pt-br/azure/cosmos-db/modeling-data
