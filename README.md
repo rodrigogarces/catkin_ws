@@ -3,7 +3,7 @@
 
 Este pacote ros propricia a navegação autônoma e mapeamento de robôs móveis em abientes desconhecidos. Ao receber um occupancy grid do node /SLAM, que faz o mapemanento e localização simultaneos, trasnforma o mapa em uma superficie de função objetivo e executa algorimos de otimização para busca os pontos do mapa mais interessantes para o robôs. Ao encontrar o melhor ponto este é enviado para o robô, e então o robô navega até lá.
 
-Sistema testado em simulação usando o simulador robótico [V-REP](http://www.coppeliarobotics.com/). As cenas usadas estão disponiveis no diretório ./scenes/ . Necessário a instação dos pacotes [navigation](http://wiki.ros.org/navigation), [move_base](http://wiki.ros.org/move_base), [youbot_navigation](http://wiki.ros.org/youbot_navigation) e [gmapping](http://wiki.ros.org/gmapping).
+Sistema testado em simulação usando o simulador robótico [V-REP](http://www.coppeliarobotics.com/). As cenas usadas estão disponiveis no diretório ./scenes/. Necessário a instação dos pacotes [navigation](http://wiki.ros.org/navigation), [move_base](http://wiki.ros.org/move_base), [youbot_navigation](http://wiki.ros.org/youbot_navigation) e [gmapping](http://wiki.ros.org/gmapping).
 
 ![](../header.png)
 
