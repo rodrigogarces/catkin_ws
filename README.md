@@ -5,20 +5,6 @@ De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 
 ![](../header.png)
 
-## Instalação
-
-OS X & Linux:
-
-```sh
-npm install my-crazy-module --save
-```
-
-Windows:
-
-```sh
-edit autoexec.bat
-```
-
 ## Exemplo de uso
 
 Inicie o ros:
@@ -63,11 +49,13 @@ catkin build
 
 ## Meta
 
-Raphael Gomes – raphaelgoms@gmail.com
-
 Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
 
 [https://github.com/yourname/github-link](https://github.com/othonalberto/)
+
+###### Contribuidores:
+
+Raphael Gomes – raphaelgoms@gmail.com
 
 ## Contributing
 
