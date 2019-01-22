@@ -57,7 +57,7 @@ Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
 
 ###### Contribuidores:
 
-Raphael Gomes – raphaelgoms@gmail.com
+Raphael Gomes – https://github.com/raphaelgoms / raphaelgoms@gmail.com
 
 ## Contributing
 
